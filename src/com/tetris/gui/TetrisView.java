@@ -9,15 +9,15 @@ import android.view.KeyEvent;
 import com.tetris.R;
 import com.tetris.game.GameController;
 import com.tetris.game.GameControllerImpl;
-import com.tetris.game.Piece;
+import com.tetris.game.Square;
 
 public class TetrisView extends TileView {
 
     private int gameState = GameController.READY;
+    private RefreshHandler mRedrawHandler = new RefreshHandler();
 
     private long mLastMove;
-
-    GameController gameController;
+    private GameController gameController;
 
     public TetrisView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -29,35 +29,44 @@ public class TetrisView extends TileView {
         initTetrisView();
     }
 
-    private RefreshHandler mRedrawHandler = new RefreshHandler();
-
-    class RefreshHandler extends Handler {
-
-        @Override
-        public void handleMessage(Message msg) {
-            TetrisView.this.update();
-            TetrisView.this.invalidate();
-        }
-
-        public void sleep(long delayMillis) {
-            this.removeMessages(0);
-            sendMessageDelayed(obtainMessage(0), delayMillis);
-        }
-    }
-
     private void initTetrisView() {
         setFocusable(true);
+        loadTiles(this.getContext().getResources());
+    }
 
-        Resources r = this.getContext().getResources();
+    private void newGame() {
+        gameController = new GameControllerImpl();
+        setMode(GameController.RUNNING);
+        updateView();
+    }
 
+    public void setMode(int newMode) {
+        gameState = newMode;
+    }
+
+    public void updateView() {
+        if (gameState == GameController.RUNNING) {
+            long now = System.currentTimeMillis();
+
+            if (now - mLastMove > gameController.moveDelay()) {
+                clearTiles();
+                gameController.movePieceDown();
+                mLastMove = now;
+            }
+            mRedrawHandler.sleep(gameController.moveDelay());
+        }
+
+    }
+
+    private void loadTiles(Resources r) {
         resetTiles(4);
-        loadTile(Piece.BLUE_SQAURE, r.getDrawable(R.drawable.blue));
-        loadTile(Piece.GREEN_SQAURE, r.getDrawable(R.drawable.green));
-        loadTile(Piece.LIGHT_GREEN_SQAURE, r.getDrawable(R.drawable.light_green));
-        loadTile(Piece.ORANGE_SQAURE, r.getDrawable(R.drawable.orange));
-        loadTile(Piece.PINK_SQAURE, r.getDrawable(R.drawable.pink));
-        loadTile(Piece.PURPLE_SQAURE, r.getDrawable(R.drawable.purple));
-        loadTile(Piece.YELLOW_SQAURE, r.getDrawable(R.drawable.yellow));
+        loadTile(Square.BLUE_SQAURE, r.getDrawable(R.drawable.blue));
+        loadTile(Square.GREEN_SQAURE, r.getDrawable(R.drawable.green));
+        loadTile(Square.LIGHT_GREEN_SQAURE, r.getDrawable(R.drawable.light_green));
+        loadTile(Square.ORANGE_SQAURE, r.getDrawable(R.drawable.orange));
+        loadTile(Square.PINK_SQAURE, r.getDrawable(R.drawable.pink));
+        loadTile(Square.PURPLE_SQAURE, r.getDrawable(R.drawable.purple));
+        loadTile(Square.YELLOW_SQAURE, r.getDrawable(R.drawable.yellow));
     }
 
     @Override
@@ -66,9 +75,7 @@ public class TetrisView extends TileView {
         switch (keyCode){
             case KeyEvent.KEYCODE_DPAD_UP:
                 if (gameState == GameController.READY | gameState == GameController.LOSE) {
-                    setupNewGame();
-                } else if (gameState == GameController.PAUSE) {
-                    resumeGame();
+                    newGame();
                 } else {
                     gameController.rotatePiece();
                 }
@@ -87,32 +94,17 @@ public class TetrisView extends TileView {
         return super.onKeyDown(keyCode, msg);
     }
 
-    private void resumeGame() {
-        setMode(GameController.RUNNING);
-        update();
-    }
+    class RefreshHandler extends Handler {
 
-    private void setupNewGame() {
-        gameController = new GameControllerImpl();
-        setMode(GameController.RUNNING);
-        update();
-    }
-
-    public void setMode(int newMode) {
-        gameState = newMode;
-    }
-
-    public void update() {
-        if (gameState == GameController.RUNNING) {
-            long now = System.currentTimeMillis();
-
-            if (now - mLastMove > gameController.moveDelay()) {
-                clearTiles();
-                gameController.movePieceDown();
-                mLastMove = now;
-            }
-            mRedrawHandler.sleep(gameController.moveDelay());
+        @Override
+        public void handleMessage(Message msg) {
+            TetrisView.this.updateView();
+            TetrisView.this.invalidate();
         }
 
+        public void sleep(long delayMillis) {
+            this.removeMessages(0);
+            sendMessageDelayed(obtainMessage(0), delayMillis);
+        }
     }
 }

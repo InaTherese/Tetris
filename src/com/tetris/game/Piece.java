@@ -1,11 +1,24 @@
 package com.tetris.game;
 
-public interface Piece {
-    int BLUE_SQAURE = 1;
-    int GREEN_SQAURE = 2;
-    int LIGHT_GREEN_SQAURE = 3;
-    int ORANGE_SQAURE = 4;
-    int PINK_SQAURE = 5;
-    int PURPLE_SQAURE = 6;
-    int YELLOW_SQAURE = 7;
+public abstract class Piece {
+
+    int x = 0;
+    int y = 0;
+    
+    public abstract void rotate();
+
+    void moveLeft() {
+        if (x>0)
+            x-=1;
+    }
+
+    void moveRight() {
+        if (x<10)
+            x+=1;
+    }
+
+    void moveDown() {
+        if (y>20)
+            y+=1;
+    }
 }

@@ -1,34 +1,35 @@
 package com.tetris.game;
 
-/**
- * Created by IntelliJ IDEA.
- * User: christian
- * Date: 18.11.11
- * Time: 12:59
- * To change this template use File | Settings | File Templates.
- */
+import com.tetris.game.pieces.Laban;
+
 public class GameControllerImpl implements GameController{
 
+    Piece currentPiece;
+    Bottom bottomBricks;
+    
     public GameControllerImpl(){
-        // TODO
-        // Generate a new piece
-        // more initalization code
+        generateStartingPiece();
+        bottomBricks = new BottomBrick();
+    }
+
+    private void generateStartingPiece() {
+        currentPiece = new Laban();
     }
 
     public void rotatePiece() {
-        //To change body of implemented methods use File | Settings | File Templates.
+        currentPiece.rotate();
     }
 
     public void movePieceLeft() {
-        //To change body of implemented methods use File | Settings | File Templates.
+        currentPiece.moveLeft();
     }
 
     public void movePieceRight() {
-        //To change body of implemented methods use File | Settings | File Templates.
+        currentPiece.moveRight();
     }
 
     public void movePieceDown() {
-        //To change body of implemented methods use File | Settings | File Templates.
+        currentPiece.moveDown();
     }
 
     public int getScore() {
@@ -36,10 +37,10 @@ public class GameControllerImpl implements GameController{
     }
 
     public int moveDelay() {
-        return 600;
+        return 1000;
     }
 
-    public Square[] getSquaresToDraw() {
+    public Square[] getSquaresReadyToDraw() {
         return new Square[0];  //To change body of implemented methods use File | Settings | File Templates.
     }
 }

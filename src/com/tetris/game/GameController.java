@@ -14,5 +14,5 @@ public interface GameController {
     int getScore();
     int moveDelay();
     
-    Square[] getSquaresToDraw();
+    Square[] getSquaresReadyToDraw();
 }

@@ -9,7 +9,7 @@
     android:layout_height="wrap_content"
     android:text="Hello World, MyActivity"
     />
-<com.example.TetrisView
+<com.tetris.gui.TetrisView
          android:id="@+id/tetrisView"
          android:layout_width="match_parent"
          android:layout_height="match_parent"/>
