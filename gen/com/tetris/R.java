@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.example;
+package com.tetris;
 
 public final class R {
     public static final class attr {
@@ -28,11 +28,18 @@ containing a value of this type.
         public static final int purple=0x7f020006;
         public static final int yellow=0x7f020007;
     }
+    public static final class id {
+        public static final int tetrisView=0x7f050000;
+    }
     public static final class layout {
         public static final int main=0x7f030000;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
+        public static final int mode_lose_prefix=0x7f040003;
+        public static final int mode_lose_suffix=0x7f040004;
+        public static final int mode_pause=0x7f040002;
+        public static final int mode_ready=0x7f040001;
     }
     public static final class styleable {
         /** Attributes that can be used with a TileView.
@@ -41,7 +48,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #TileView_tileSize com.example:tileSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #TileView_tileSize com.tetris:tileSize}</code></td><td></td></tr>
            </table>
            @see #TileView_tileSize
          */
@@ -49,7 +56,7 @@ containing a value of this type.
             0x7f010000
         };
         /**
-          <p>This symbol is the offset where the {@link com.example.R.attr#tileSize}
+          <p>This symbol is the offset where the {@link com.tetris.R.attr#tileSize}
           attribute's value can be found in the {@link #TileView} array.
 
 
