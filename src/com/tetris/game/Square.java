@@ -13,4 +13,6 @@ public interface Square {
     
     int getX();
     int getY();
+
+    int getColor();
 }

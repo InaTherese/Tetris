@@ -1,14 +1,13 @@
 package com.tetris.gui;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
-import com.tetris.R;
+import com.tetris.game.Square;
 
 public class TileView extends View {
 
@@ -28,22 +27,12 @@ public class TileView extends View {
 
     public TileView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.TileView);
-
-        mTileSize = a.getInt(R.styleable.TileView_tileSize, 12);
-        
-        a.recycle();
+        mTileSize = 24;
     }
 
     public TileView(Context context, AttributeSet attrs) {
         super(context, attrs);
-
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.TileView);
-
-        mTileSize = a.getInt(R.styleable.TileView_tileSize, 12);
-        
-        a.recycle();
+        mTileSize = 24;
     }
 
     public void resetTiles(int tilecount) {
@@ -81,6 +70,10 @@ public class TileView extends View {
 
     public void setTile(int tileindex, int x, int y) {
         mTileGrid[x][y] = tileindex;
+    }
+
+    public void setSquare(Square square){
+        mTileGrid[square.getX()][square.getY()] = square.getColor();
     }
 
     @Override

@@ -10,6 +10,7 @@ import com.tetris.R;
 import com.tetris.game.GameController;
 import com.tetris.game.GameControllerImpl;
 import com.tetris.game.Square;
+import com.tetris.game.SquareImpl;
 
 public class TetrisView extends TileView {
 
@@ -49,6 +50,7 @@ public class TetrisView extends TileView {
             long now = System.currentTimeMillis();
 
             if (now - mLastMove > gameController.moveDelay()) {
+                updateWalls();
                 clearTiles();
                 gameController.movePieceDown();
                 mLastMove = now;
@@ -58,8 +60,19 @@ public class TetrisView extends TileView {
 
     }
 
+    private void updateWalls() {
+        for (int x = 0; x < mXTileCount; x++) {
+            setSquare(new SquareImpl(x, 0, Square.GREEN_SQAURE));
+            setSquare(new SquareImpl(x, mYTileCount - 1, Square.GREEN_SQAURE));
+        }
+        for (int y = 1; y < mYTileCount - 1; y++) {
+            setSquare(new SquareImpl(0, y, Square.GREEN_SQAURE));
+            setSquare(new SquareImpl(mXTileCount - 1, y, Square.GREEN_SQAURE));
+        }
+    }
+
     private void loadTiles(Resources r) {
-        resetTiles(4);
+        resetTiles(8);
         loadTile(Square.BLUE_SQAURE, r.getDrawable(R.drawable.blue));
         loadTile(Square.GREEN_SQAURE, r.getDrawable(R.drawable.green));
         loadTile(Square.LIGHT_GREEN_SQAURE, r.getDrawable(R.drawable.light_green));
