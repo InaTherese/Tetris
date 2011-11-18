@@ -41,6 +41,6 @@ public class GameControllerImpl implements GameController{
     }
 
     public Square[] getSquaresReadyToDraw() {
-        return new Square[0];  //To change body of implemented methods use File | Settings | File Templates.
+        return currentPiece.getSquaresWithGlobalCoordinates();
     }
 }

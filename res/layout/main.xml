@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-<TextView
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:text="Hello World, MyActivity"
-    />
-<com.tetris.gui.TetrisView
-         android:id="@+id/tetrisView"
-         android:layout_width="match_parent"
-         android:layout_height="match_parent"/>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
 
-</LinearLayout>
+	<com.tetris.gui.TetrisView
+	 android:id="@+id/snake"
+		android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tileSize="24"
+                />
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" >
+
+		<TextView
+		 android:id="@+id/text"
+			android:text="@string/snake_layout_text_text"
+			android:visibility="visible"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:gravity="center_horizontal"
+			android:textColor="#ff8888ff"
+			android:textSize="24sp"/>
+	</RelativeLayout>
+</FrameLayout>
+
 

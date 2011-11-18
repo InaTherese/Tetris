@@ -23,8 +23,22 @@ public class SquareImpl implements Square {
         return color;
     }
 
+    public void makeCoordinatesGlobal(int xOffset, int yOffset) {
+        x+=xOffset;
+        y+=yOffset;
+    }
+
     public void changeCoordinates(int x, int y) {
         this.x=x;
         this.y=y;
+    }
+
+    @Override
+    public String toString() {
+        return "SquareImpl{" +
+                "x=" + x +
+                ", y=" + y +
+                ", color=" + color +
+                '}';
     }
 }

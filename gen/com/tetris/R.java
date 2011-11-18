@@ -29,7 +29,8 @@ containing a value of this type.
         public static final int yellow=0x7f020007;
     }
     public static final class id {
-        public static final int tetrisView=0x7f050000;
+        public static final int snake=0x7f050000;
+        public static final int text=0x7f050001;
     }
     public static final class layout {
         public static final int main=0x7f030000;
@@ -40,6 +41,7 @@ containing a value of this type.
         public static final int mode_lose_suffix=0x7f040004;
         public static final int mode_pause=0x7f040002;
         public static final int mode_ready=0x7f040001;
+        public static final int snake_layout_text_text=0x7f040005;
     }
     public static final class styleable {
         /** Attributes that can be used with a TileView.

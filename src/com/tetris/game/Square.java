@@ -15,4 +15,5 @@ public interface Square {
     int getY();
 
     int getColor();
+    void makeCoordinatesGlobal(int xOffset, int yOffset);
 }

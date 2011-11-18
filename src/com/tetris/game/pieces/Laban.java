@@ -7,7 +7,7 @@ import com.tetris.game.SquareImpl;
 public class Laban extends Piece {
 
     Square[] piece = new Square[4];
-    
+
     boolean standing = true;
     
     public Laban(){
@@ -31,6 +31,7 @@ public class Laban extends Piece {
         piece[1].changeCoordinates(1,0);
         piece[2].changeCoordinates(2,0);
         piece[3].changeCoordinates(3,0);
+        standing = false;
     }
 
     public void standUp() {
@@ -38,5 +39,10 @@ public class Laban extends Piece {
         piece[1].changeCoordinates(0, 1);
         piece[2].changeCoordinates(0, 2);
         piece[3].changeCoordinates(0, 3);
+        standing = true;
+    }
+
+    protected Square[] getSquares() {
+        return piece;
     }
 }
