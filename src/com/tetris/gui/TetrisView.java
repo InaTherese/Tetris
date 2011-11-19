@@ -5,7 +5,6 @@ import android.content.res.Resources;
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.KeyEvent;
 import com.tetris.R;
 import com.tetris.game.GameController;
@@ -59,12 +58,10 @@ public class TetrisView extends TileView {
             }
             mRedrawHandler.sleep(gameController.moveDelay());
         }
-
     }
 
     private void updatePiece() {
         for (Square s : gameController.getSquaresReadyToDraw()){
-            Log.i("updatePiece()", s.toString());
             setSquare(s);
         }
     }
@@ -101,22 +98,18 @@ public class TetrisView extends TileView {
                 } else {
                     gameController.rotatePiece();
                 }
-                Log.i("Keys", "up");
-                return true;
+                break;
             case KeyEvent.KEYCODE_DPAD_DOWN:
                 gameController.movePieceDown();
-                Log.i("Keys", "down");
-                return true;
+                break;
             case KeyEvent.KEYCODE_DPAD_LEFT:
                 gameController.movePieceLeft();
-                Log.i("Keys", "left");
-                return true;
+                break;
             case KeyEvent.KEYCODE_DPAD_RIGHT:
                 gameController.movePieceRight();
-                Log.i("Keys", "right");
-                return true;
+                break;
         }
-        Log.i("Keys", "super()");
+        updatePiece();
         return super.onKeyDown(keyCode, msg);
     }
 

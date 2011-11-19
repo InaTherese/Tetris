@@ -28,6 +28,10 @@ public class SquareImpl implements Square {
         y+=yOffset;
     }
 
+    public Square duplicate(){
+        return new SquareImpl(x,y,color);
+    }
+
     public void changeCoordinates(int x, int y) {
         this.x=x;
         this.y=y;

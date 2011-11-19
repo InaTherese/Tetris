@@ -6,8 +6,6 @@ import com.tetris.game.SquareImpl;
 
 public class Laban extends Piece {
 
-    Square[] piece = new Square[4];
-
     boolean standing = true;
     
     public Laban(){
@@ -40,9 +38,5 @@ public class Laban extends Piece {
         piece[2].changeCoordinates(0, 2);
         piece[3].changeCoordinates(0, 3);
         standing = true;
-    }
-
-    protected Square[] getSquares() {
-        return piece;
     }
 }

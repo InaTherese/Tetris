@@ -5,12 +5,20 @@ public abstract class Piece {
     int x = 0;
     int y = 0;
 
+    protected Square[] piece = new Square[4];
+
     public abstract void rotate();
 
-    protected abstract Square[] getSquares();
+    private Square[] getCopyOfSquares(){
+        Square[] s = new Square[4];
+        for (int i=0;i<4;i++){
+            s[i] = piece[i].duplicate();
+        }
+        return s;
+    }
 
     public Square[] getSquaresWithGlobalCoordinates(){
-        Square[] squares = getSquares().clone();
+        Square[] squares = getCopyOfSquares().clone();
         for (Square s : squares){
             s.makeCoordinatesGlobal(x,y);
         }
