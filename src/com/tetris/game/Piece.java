@@ -7,7 +7,13 @@ public abstract class Piece {
 
     protected Square[] piece = new Square[4];
 
-    public abstract void rotate();
+    public Square[] getSquaresWithGlobalCoordinates(){
+        Square[] squares = getCopyOfSquares().clone();
+        for (Square s : squares){
+            s.makeCoordinatesGlobal(x,y);
+        }
+        return squares;
+    }
 
     private Square[] getCopyOfSquares(){
         Square[] s = new Square[4];
@@ -17,26 +23,32 @@ public abstract class Piece {
         return s;
     }
 
-    public Square[] getSquaresWithGlobalCoordinates(){
-        Square[] squares = getCopyOfSquares().clone();
-        for (Square s : squares){
-            s.makeCoordinatesGlobal(x,y);
-        }
-        return squares;
-    }
+    public abstract void rotate();
 
     void moveLeft() {
-        if (x>0)
+        if (withinBounds(-1, 0))
             x-=1;
     }
 
     void moveRight() {
-        if (x<10)
+        if (withinBounds(1, 0))
             x+=1;
     }
 
     void moveDown() {
-        if (y>20)
+        if (withinBounds(0, 1))
             y+=1;
+    }
+    
+    private boolean withinBounds(int x, int y){
+        for (Square s : getSquaresWithGlobalCoordinates()){
+            if (squareOutOfBounds(x, y, s))
+                return false;
+        }
+        return true;
+    }
+
+    private boolean squareOutOfBounds(int x, int y, Square s) {
+        return s.getX()+x>=10 || s.getX()+x<0 || s.getY()+y>=20 || s.getY()+y<0;
     }
 }
