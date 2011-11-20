@@ -3,7 +3,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
-	<com.tetris.gui.TetrisView
+	<com.tetris.gui.TetrisController
 	 android:id="@+id/snake"
 		android:layout_width="match_parent"
                 android:layout_height="match_parent"

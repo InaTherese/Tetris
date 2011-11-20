@@ -9,6 +9,10 @@ import android.util.AttributeSet;
 import android.view.View;
 import com.tetris.game.Square;
 
+/**
+ * TileView: a View-variant designed for handling arrays of "icons" or other drawables.
+ */
+
 public class TileView extends View {
 
     /**
@@ -67,7 +71,7 @@ public class TileView extends View {
         mYOffset = ((h - (mTileSize * mYTileCount)) / 2);
 
         mTileGrid = new int[mXTileCount][mYTileCount];
-        clearTiles();
+        clearScreen();
     }
 
     /**
@@ -89,7 +93,7 @@ public class TileView extends View {
     /**
      * Resets all tiles to 0 (empty)
      */
-    public void clearTiles() {
+    public void clearScreen() {
         for (int x = 0; x < mXTileCount; x++) {
             for (int y = 0; y < mYTileCount; y++) {
                 setTile(0, x, y);

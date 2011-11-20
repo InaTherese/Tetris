@@ -9,10 +9,10 @@ public class Laban extends Piece {
     boolean standing = true;
     
     public Laban(){
-        piece[0] = new SquareImpl(0,0, Square.BLUE_SQAURE);
-        piece[1] = new SquareImpl(0,1, Square.BLUE_SQAURE);
-        piece[2] = new SquareImpl(0,2, Square.BLUE_SQAURE);
-        piece[3] = new SquareImpl(0,3, Square.BLUE_SQAURE);
+        piece[0] = new SquareImpl(0,0, Square.BLUE);
+        piece[1] = new SquareImpl(0,1, Square.BLUE);
+        piece[2] = new SquareImpl(0,2, Square.BLUE);
+        piece[3] = new SquareImpl(0,3, Square.BLUE);
     }
     
     @Override
