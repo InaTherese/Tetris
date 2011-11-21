@@ -40,7 +40,7 @@ public class TetrisController extends TetrisView {
             timeOfLastMove = System.currentTimeMillis();
         }
         redrawScreen(gameController.getSquaresReadyToDraw());
-        redrawHandler.sleep(100);
+        redrawHandler.sleep(10);
     }
 
     public void setMode(int newMode) {
