@@ -8,15 +8,18 @@ import java.util.Collections;
 public class GameControllerImpl implements GameController{
 
     Piece currentPiece;
+    Piece nextPiece;
     Bottom bottomBricks;
     
     public GameControllerImpl(){
+        generateNewPiece();
         generateNewPiece();
         bottomBricks = new BottomBrick();
     }
 
     private void generateNewPiece() {
-        currentPiece = new Elle();
+    	currentPiece = nextPiece;
+    	nextPiece = new Elle();
     }
 
     public void rotatePiece() {
