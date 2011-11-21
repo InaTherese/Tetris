@@ -40,7 +40,7 @@ public class Inelle extends Piece {
 
 	private void positionTwo() {
 		piece[0].changeCoordinates(1, 1);
-		piece[1].changeCoordinates(2, 1);
+		piece[1].changeCoordinates(1, 2);
 		piece[2].changeCoordinates(2, 2);
 		piece[3].changeCoordinates(3, 2);
 		position=2;
@@ -50,7 +50,7 @@ public class Inelle extends Piece {
 		piece[0].changeCoordinates(1, 0);
 		piece[1].changeCoordinates(1, 1);
 		piece[2].changeCoordinates(1, 2);
-		piece[3].changeCoordinates(2, 1);
+		piece[3].changeCoordinates(2, 0);
 		position=3;
 	}
 
