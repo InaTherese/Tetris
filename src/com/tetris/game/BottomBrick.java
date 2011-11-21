@@ -9,6 +9,12 @@ public class BottomBrick implements Bottom {
 
     ArrayList<Square> bottomGrid = new ArrayList<Square>();
 
+    public int getNumberOfRemovedLines() {
+        return numberOfRemovedLines;
+    }
+
+    private int numberOfRemovedLines = 0;
+
     public boolean hasPieceAt(int x, int y) {
         boolean hasPieceAt = false;
         if (y == TetrisView.BOARD_HEIGHT) {
@@ -22,9 +28,9 @@ public class BottomBrick implements Bottom {
         return hasPieceAt;
     }
 
-    public int commitPieceToBottom(Piece piece) {
+    public void commitPieceToBottom(Piece piece) {
         Collections.addAll(bottomGrid, piece.getSquaresWithGlobalCoordinates());
-        return checkRowsForPoints();
+        checkRowsForPoints();
     }
 
     private void applyGravity(int i) {
@@ -38,14 +44,11 @@ public class BottomBrick implements Bottom {
         return bottomGrid;
     }
     
-    private int checkRowsForPoints(){
-        int score = 0;
+    private void checkRowsForPoints(){
         for (int i=0;i<TetrisView.BOARD_HEIGHT;i++){
             if (hasFullLineAtRow(i))
                 removeLine(i);
-                score++;
         }
-        return score;
     }
 
     private void removeLine(int i) {
@@ -56,6 +59,7 @@ public class BottomBrick implements Bottom {
         }
         bottomGrid.removeAll(squares);
         applyGravity(i);
+        numberOfRemovedLines++;
     }
 
     private boolean hasFullLineAtRow(int row){

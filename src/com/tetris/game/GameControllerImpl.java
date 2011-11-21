@@ -8,7 +8,7 @@ public class GameControllerImpl implements GameController{
     Piece currentPiece;
     Piece nextPiece;
     Bottom bottomBricks;
-    private int score = 0;
+    private int moveDelay = 1000;
 
     public GameControllerImpl(){
         generateNewPiece();
@@ -18,7 +18,13 @@ public class GameControllerImpl implements GameController{
 
     private void generateNewPiece() {
     	currentPiece = nextPiece;
+        increaseDifficulty();
     	nextPiece = PieceFactory.generateRandomPiece();
+    }
+
+    private void increaseDifficulty() {
+        if (moveDelay()>0)
+            moveDelay--;
     }
 
     public void rotatePiece() {
@@ -47,7 +53,7 @@ public class GameControllerImpl implements GameController{
 
     public void movePieceDown() {
         if (willCollide(0, 1)) {
-            score+= bottomBricks.commitPieceToBottom(currentPiece);
+            bottomBricks.commitPieceToBottom(currentPiece);
             generateNewPiece();
         } else {
             currentPiece.moveDown();
@@ -64,11 +70,12 @@ public class GameControllerImpl implements GameController{
     }
 
     public int getScore() {
-        return score;
+        int scoreMultiplier = 1000/moveDelay();
+        return bottomBricks.getNumberOfRemovedLines()*scoreMultiplier;
     }
 
     public int moveDelay() {
-        return 1000;
+        return moveDelay;
     }
 
     public ArrayList<Square> getSquaresReadyToDraw() {

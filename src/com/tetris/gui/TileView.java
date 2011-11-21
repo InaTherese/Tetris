@@ -115,7 +115,8 @@ public class TileView extends View {
     }
 
     public void setSquare(Square square) {
-        mTileGrid[square.getX()][square.getY()] = square.getColor();
+        if (square.getY()<TetrisView.BOARD_HEIGHT && square.getX()<TetrisView.BOARD_WIDTH)
+            mTileGrid[square.getX()][square.getY()] = square.getColor();
     }
 
     @Override

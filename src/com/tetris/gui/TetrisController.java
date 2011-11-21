@@ -5,6 +5,9 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
+import android.view.View;
+import android.widget.TextView;
+import com.tetris.R;
 import com.tetris.game.GameController;
 import com.tetris.game.GameControllerImpl;
 
@@ -28,15 +31,31 @@ public class TetrisController extends TetrisView {
         super(context, attributeSet, defStyle);
     }
 
-    private void newGame() {
+    public void newGame() {
         gameController = new GameControllerImpl();
         setMode(GameController.RUNNING);
         gameLoop();
     }
 
+    public void rotate(){
+        gameController.rotatePiece();
+    }
+    public void left(){
+        gameController.movePieceLeft();
+    }
+    public void right(){
+        gameController.movePieceRight();
+    }
+    public void down(){
+        gameController.movePieceDown();
+    }
+
     public void gameLoop() {
         if (isTimeToMovePieceDown()) {
             gameController.movePieceDown();
+            View p = this.getRootView();
+            TextView scoreBoard = (TextView) p.findViewById(R.id.score);
+            scoreBoard.setText("score: " + gameController.getScore());
             timeOfLastMove = System.currentTimeMillis();
         }
         redrawScreen(gameController.getSquaresReadyToDraw());

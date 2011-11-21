@@ -8,96 +8,17 @@
     <option name="targetHashString" value="android-10" />
     <option name="theme" value="Theme" />
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="INFO" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="26143f5c-530a-40c9-a428-785d1b7525b2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/Tetris.apk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes.dex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/R$attr.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/R$color.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/R$drawable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/R$id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/R$layout.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/R$string.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/R$styleable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/R.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/game/Bottom.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/game/BottomBrick.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/game/GameController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/game/GameControllerImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/game/Piece.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/game/PieceFactory$PieceKind.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/game/PieceFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/game/Square.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/game/SquareImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/game/pieces/Elle.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/game/pieces/Inelle.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/game/pieces/Knoll.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/game/pieces/Laban.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/game/pieces/Tipsy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/game/pieces/Tjukkas.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/game/pieces/Tott.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/gui/MyActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/gui/TetrisController$RefreshHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/gui/TetrisController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/gui/TetrisView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/classes/com/tetris/gui/TileView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/R$attr.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/R$drawable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/R$id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/R$layout.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/R$string.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/R$styleable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/R.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/game/Bottom.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/game/BottomBrick.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/game/GameController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/game/GameControllerImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/game/Piece.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/game/Square.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/game/SquareImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/game/pieces/Laban.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/gui/MyActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/gui/TetrisController$RefreshHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/gui/TetrisController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/gui/TetrisView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/com/tetris/gui/TileView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-hdpi/blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-hdpi/green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-hdpi/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-hdpi/light_green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-hdpi/orange.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-hdpi/pink.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-hdpi/purple.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-hdpi/yellow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-ldpi/blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-ldpi/green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-ldpi/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-ldpi/light_green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-ldpi/orange.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-ldpi/pink.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-ldpi/purple.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-ldpi/yellow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-mdpi/blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-mdpi/green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-mdpi/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-mdpi/light_green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-mdpi/orange.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-mdpi/pink.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-mdpi/purple.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/res/drawable-mdpi/yellow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/resources.ap_" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/com/tetris/R.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable-hdpi/icon.png" afterPath="$PROJECT_DIR$/res/drawable-hdpi/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable-ldpi/icon.png" afterPath="$PROJECT_DIR$/res/drawable-ldpi/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable-mdpi/icon.png" afterPath="$PROJECT_DIR$/res/drawable-mdpi/icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/tetris/gui/MyActivity.java" afterPath="$PROJECT_DIR$/src/com/tetris/gui/Tetris.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tetris/game/pieces/Elle.java" afterPath="$PROJECT_DIR$/src/com/tetris/game/pieces/Elle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tetris/game/pieces/Inelle.java" afterPath="$PROJECT_DIR$/src/com/tetris/game/pieces/Inelle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tetris/game/pieces/Knoll.java" afterPath="$PROJECT_DIR$/src/com/tetris/game/pieces/Knoll.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tetris/game/pieces/Tjukkas.java" afterPath="$PROJECT_DIR$/src/com/tetris/game/pieces/Tjukkas.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tetris/game/pieces/Tott.java" afterPath="$PROJECT_DIR$/src/com/tetris/game/pieces/Tott.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tetris/gui/TetrisController.java" afterPath="$PROJECT_DIR$/src/com/tetris/gui/TetrisController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tetris/gui/TetrisView.java" afterPath="$PROJECT_DIR$/src/com/tetris/gui/TetrisView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tetris/gui/TileView.java" afterPath="$PROJECT_DIR$/src/com/tetris/gui/TileView.java" />
     </list>
     <ignored path="Tetris.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -165,9 +86,9 @@
       <file leaf-file-name="BottomBrick.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/tetris/game/BottomBrick.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="12" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0">
+            <state line="19" column="13" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#1341#1349#0" expanded="true" />
+                <element signature="e#1396#1404#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -176,20 +97,17 @@
       <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="31" selection-start="679" selection-end="679" vertical-scroll-proportion="0.0">
+            <state line="9" column="40" selection-start="474" selection-end="474" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameControllerImpl.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GameControllerImpl.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/tetris/game/GameControllerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="4" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.19794345">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1891#1899#0" expanded="true" />
-              </folding>
+            <state line="76" column="15" selection-start="1970" selection-end="1970" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -197,10 +115,17 @@
       <file leaf-file-name="TetrisController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/tetris/gui/TetrisController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="43" selection-start="1218" selection-end="1218" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="61" column="30" selection-start="1924" selection-end="1924" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tetris.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/tetris/gui/Tetris.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="24" selection-start="1468" selection-end="1468" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -208,16 +133,16 @@
       <file leaf-file-name="TetrisView.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/tetris/gui/TetrisView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="27" selection-start="871" selection-end="871" vertical-scroll-proportion="0.0">
+            <state line="30" column="52" selection-start="924" selection-end="924" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tetris/gui/MyActivity.java">
+      <file leaf-file-name="TileView.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/tetris/gui/TileView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="1" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0">
+            <state line="118" column="12" selection-start="3434" selection-end="3434" vertical-scroll-proportion="0.8678501">
               <folding />
             </state>
           </provider>
@@ -226,19 +151,8 @@
       <file leaf-file-name="Bottom.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/tetris/game/Bottom.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="8" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0">
+            <state line="7" column="41" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PieceFactory.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tetris/game/PieceFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="99" selection-end="99" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -246,7 +160,7 @@
       <file leaf-file-name="GameController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/tetris/game/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="8" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0">
+            <state line="15" column="27" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -267,22 +181,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/tetris/game/GameController.java" />
-        <option value="$PROJECT_DIR$/src/com/tetris/game/pieces/Laban.java" />
-        <option value="$PROJECT_DIR$/src/com/tetris/gui/TileView.java" />
-        <option value="$PROJECT_DIR$/src/com/tetris/game/Bottom.java" />
-        <option value="$PROJECT_DIR$/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/src/com/tetris/game/Piece.java" />
         <option value="$PROJECT_DIR$/gen/com/tetris/R.java" />
         <option value="$PROJECT_DIR$/src/com/tetris/game/PieceFactory.java" />
         <option value="$PROJECT_DIR$/src/com/tetris/game/SquareImpl.java" />
         <option value="$PROJECT_DIR$/src/com/tetris/game/Square.java" />
-        <option value="$PROJECT_DIR$/src/com/tetris/game/BottomBrick.java" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/src/com/tetris/gui/TetrisController.java" />
-        <option value="$PROJECT_DIR$/src/com/tetris/gui/TetrisView.java" />
+        <option value="$PROJECT_DIR$/src/com/tetris/game/Bottom.java" />
+        <option value="$PROJECT_DIR$/src/com/tetris/game/BottomBrick.java" />
+        <option value="$PROJECT_DIR$/src/com/tetris/game/GameController.java" />
         <option value="$PROJECT_DIR$/src/com/tetris/game/GameControllerImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/tetris/gui/TetrisView.java" />
+        <option value="$PROJECT_DIR$/src/com/tetris/gui/TetrisController.java" />
+        <option value="$PROJECT_DIR$/src/com/tetris/gui/MyActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/tetris/gui/Tetris.java" />
+        <option value="$PROJECT_DIR$/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/src/com/tetris/gui/TileView.java" />
       </list>
     </option>
   </component>
@@ -340,7 +254,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -434,6 +347,20 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tetris" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -452,9 +379,14 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-ldpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Favorites" />
     </panes>
   </component>
@@ -463,7 +395,7 @@
     <property name="OverrideImplement.combined" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Ignored.Files" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Android Logcat" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -471,8 +403,8 @@
     <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -684,7 +616,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="922" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889965" sideWeight="0.4533046" order="7" side_tool="false" content_ui="tabs" />
@@ -698,14 +630,14 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32862645" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32769045" sideWeight="0.45043105" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32769045" sideWeight="0.44252872" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37958115" sideWeight="0.33719432" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17744254" sideWeight="0.6711004" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889965" sideWeight="0.31321838" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889965" sideWeight="0.6810345" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2413793" sideWeight="0.6711004" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32889965" sideWeight="0.30244252" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889965" sideWeight="0.69181037" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Sequence" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -781,28 +713,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="31" selection-start="43" selection-end="43" vertical-scroll-proportion="0.043392505" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tetris/game/pieces/Laban.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="588" selection-end="588" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tetris/game/SquareImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="23" selection-start="312" selection-end="312" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="16" column="23" selection-start="312" selection-end="312" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tetris/game/Square.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="30" selection-start="293" selection-end="293" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="15" column="30" selection-start="293" selection-end="293" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tetris/game/Piece.java">
@@ -810,80 +728,88 @@
         <state line="5" column="0" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="51" selection-start="403" selection-end="403" vertical-scroll-proportion="0.30374753" />
+      </provider>
+    </entry>
+    <entry file="jar:///Applications/Android/platforms/android-10/android.jar!/android/widget/TextView.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="184" column="52" selection-start="7873" selection-end="7885" vertical-scroll-proportion="0.30457518" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tetris/game/PieceFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="99" selection-end="99" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="6" column="13" selection-start="99" selection-end="99" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tetris/game/Bottom.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="8" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0">
+        <state line="7" column="41" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tetris/game/BottomBrick.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="12" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0">
+        <state line="19" column="13" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#1341#1349#0" expanded="true" />
+            <element signature="e#1396#1404#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tetris/gui/MyActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="1" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="51" selection-start="403" selection-end="403" vertical-scroll-proportion="0.30374753">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tetris/game/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="8" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0">
+        <state line="15" column="27" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/tetris/game/GameControllerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="31" selection-start="679" selection-end="679" vertical-scroll-proportion="0.0">
+        <state line="76" column="15" selection-start="1970" selection-end="1970" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tetris/gui/TetrisView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="27" selection-start="871" selection-end="871" vertical-scroll-proportion="0.0">
+        <state line="30" column="52" selection-start="924" selection-end="924" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tetris/gui/TetrisController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="43" selection-start="1218" selection-end="1218" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="61" column="30" selection-start="1924" selection-end="1924" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tetris/game/GameControllerImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/com/tetris/gui/Tetris.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="4" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.19794345">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1891#1899#0" expanded="true" />
-          </folding>
+        <state line="41" column="24" selection-start="1468" selection-end="1468" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable-ldpi/icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="40" selection-start="474" selection-end="474" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tetris/gui/TileView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="118" column="12" selection-start="3434" selection-end="3434" vertical-scroll-proportion="0.8678501">
+          <folding />
         </state>
       </provider>
     </entry>
