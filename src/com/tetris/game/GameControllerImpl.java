@@ -1,6 +1,6 @@
 package com.tetris.game;
 
-import com.tetris.game.pieces.Laban;
+import com.tetris.game.pieces.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,15 +8,18 @@ import java.util.Collections;
 public class GameControllerImpl implements GameController{
 
     Piece currentPiece;
+    Piece nextPiece;
     Bottom bottomBricks;
     
     public GameControllerImpl(){
+        generateNewPiece();
         generateNewPiece();
         bottomBricks = new BottomBrick();
     }
 
     private void generateNewPiece() {
-        currentPiece = new Laban();
+    	currentPiece = nextPiece;
+    	nextPiece = new Elle();
     }
 
     public void rotatePiece() {
