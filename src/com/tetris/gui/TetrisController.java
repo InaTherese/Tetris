@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 import com.tetris.R;
@@ -22,6 +23,8 @@ public class TetrisController extends TetrisView {
     RefreshHandler redrawHandler = new RefreshHandler();
     private int gameState = GameController.READY;
     private long timeOfLastMove;
+    private TextView comboBoard;
+    private TextView scoreBoard;
 
     public TetrisController(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -37,33 +40,63 @@ public class TetrisController extends TetrisView {
         gameLoop();
     }
 
-    public void rotate(){
+    public void rotate() {
         gameController.rotatePiece();
     }
-    public void left(){
+
+    public void left() {
         gameController.movePieceLeft();
     }
-    public void right(){
+
+    public void right() {
         gameController.movePieceRight();
     }
-    public void down(){
-        gameController.movePieceDown();
+
+    public void down() {
+        gameController.movePieceToBottom();
     }
 
     public void gameLoop() {
         if (isTimeToMovePieceDown()) {
             gameController.movePieceDown();
-            View p = this.getRootView();
-            TextView scoreBoard = (TextView) p.findViewById(R.id.score);
-            scoreBoard.setText("score: " + gameController.getScore());
+            updateScoreBoard();
             timeOfLastMove = System.currentTimeMillis();
         }
         redrawScreen(gameController.getSquaresReadyToDraw());
         redrawHandler.sleep(10);
     }
 
+    void updateScoreBoard() {
+        View p = this.getRootView();
+        scoreBoard = (TextView) p.findViewById(R.id.score);
+        comboBoard = (TextView) p.findViewById(R.id.combo);
+        scoreBoard.setText("Score: " + gameController.getScore());
+        comboBoard.setText(gameController.getRemainingTimeOfCombo()/1000 + "s; x" + gameController.getCombos());
+    }
+
     public void setMode(int newMode) {
         gameState = newMode;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        int centerOfScreen = this.getWidth() / 2;
+        double bottomThirdOfScreen = (this.getHeight() / 2) * 1.5;
+        float clickX = event.getX();
+        if (gameState == GameController.READY | gameState == GameController.LOSE) {
+            newGame();
+        } else if (event.getY() > bottomThirdOfScreen) {
+            down();
+        } else {
+            if (centerOfScreen * 1.3 > clickX && centerOfScreen * 0.7 < clickX) {
+                rotate();
+            } else if (centerOfScreen < clickX) {
+                right();
+            } else {
+                left();
+            }
+        }
+        return super.onTouchEvent(event);
     }
 
     @Override
@@ -74,17 +107,17 @@ public class TetrisController extends TetrisView {
                 if (gameState == GameController.READY | gameState == GameController.LOSE) {
                     newGame();
                 } else {
-                    gameController.rotatePiece();
+                    rotate();
                 }
                 break;
             case KeyEvent.KEYCODE_DPAD_DOWN:
-                gameController.movePieceDown();
+                down();
                 break;
             case KeyEvent.KEYCODE_DPAD_LEFT:
-                gameController.movePieceLeft();
+                left();
                 break;
             case KeyEvent.KEYCODE_DPAD_RIGHT:
-                gameController.movePieceRight();
+                right();
                 break;
         }
         return super.onKeyDown(keyCode, msg);

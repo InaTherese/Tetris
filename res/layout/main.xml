@@ -3,27 +3,36 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:background="@color/white">
-    <android.gesture.GestureOverlayView
-            android:id="@+id/gestures"
+
+    <com.tetris.gui.TetrisController
+            android:id="@+id/tetris"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1.0">
-        <com.tetris.gui.TetrisController
-                android:id="@+id/tetris"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tileSize="24"
-                />
-    </android.gesture.GestureOverlayView>
+            tileSize="24"
+            />
+
     <TextView
             android:id="@+id/score"
-            android:text="0"
+            android:text="Score: 0"
             android:visibility="visible"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:gravity="center_horizontal"
-            android:textColor="#ff8888ff"
+            android:gravity="right"
+            android:padding="10px"
+            android:textColor="#C84663"
+            android:textSize="24sp"/>
+    <TextView
+            android:id="@+id/combo"
+            android:text="x1"
+            android:visibility="visible"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="right"
+            android:paddingRight="10px"
+            android:paddingTop="30px"
+            android:textColor="#C84663"
             android:textSize="24sp"/>
 
     <RelativeLayout

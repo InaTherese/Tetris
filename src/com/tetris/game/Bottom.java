@@ -7,4 +7,9 @@ public interface Bottom {
     void commitPieceToBottom(Piece piece);
     public int getNumberOfRemovedLines();
     ArrayList<Square> getBottomGrid();
+
+    int getNumberOfCombos();
+    void setComboThreshold(long comboThreshold);
+    long getComboThreshold();
+    long getTimeLeftOfCombo();
 }

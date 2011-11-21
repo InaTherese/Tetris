@@ -51,6 +51,12 @@ public class GameControllerImpl implements GameController{
             currentPiece.moveRight();
     }
 
+    public void movePieceToBottom() {
+        while (!willCollide(0, 1)){
+            movePieceDown();
+        }
+    }
+
     public void movePieceDown() {
         if (willCollide(0, 1)) {
             bottomBricks.commitPieceToBottom(currentPiece);
@@ -60,7 +66,7 @@ public class GameControllerImpl implements GameController{
         }
     }
 
-    private boolean willCollide(int x, int y) {
+    public boolean willCollide(int x, int y) {
         Square[] squares = currentPiece.getSquaresWithGlobalCoordinates();
         for (Square s : squares){
             if (bottomBricks.hasPieceAt(s.getX()+x,s.getY()+y))
@@ -70,8 +76,19 @@ public class GameControllerImpl implements GameController{
     }
 
     public int getScore() {
-        int scoreMultiplier = 1000/moveDelay();
+        int scoreMultiplier = (1000/moveDelay())*bottomBricks.getNumberOfCombos();
         return bottomBricks.getNumberOfRemovedLines()*scoreMultiplier;
+    }
+    
+    public int getCombos(){
+        return bottomBricks.getNumberOfCombos();
+    }
+
+    public long getRemainingTimeOfCombo() {
+        long remaining = 0L;
+        if (bottomBricks.getTimeLeftOfCombo()>0)
+            remaining = bottomBricks.getTimeLeftOfCombo();
+        return remaining;
     }
 
     public int moveDelay() {
