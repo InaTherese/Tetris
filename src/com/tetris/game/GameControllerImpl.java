@@ -1,7 +1,5 @@
 package com.tetris.game;
 
-import com.tetris.game.pieces.*;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
