@@ -53,7 +53,6 @@ public class GameControllerImpl implements GameController{
     }
 
     private boolean willCollide(int x, int y) {
-        boolean willHitBottom;
         Square[] squares = currentPiece.getSquaresWithGlobalCoordinates();
         for (Square s : squares){
             if (bottomBricks.hasPieceAt(s.getX()+x,s.getY()+y))
