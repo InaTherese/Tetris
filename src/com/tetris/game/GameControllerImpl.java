@@ -19,7 +19,7 @@ public class GameControllerImpl implements GameController{
 
     private void generateNewPiece() {
     	currentPiece = nextPiece;
-    	nextPiece = new Elle();
+    	nextPiece = new Inelle();
     }
 
     public void rotatePiece() {
