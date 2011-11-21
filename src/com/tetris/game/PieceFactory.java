@@ -1,6 +1,6 @@
 package com.tetris.game;
 
-import com.tetris.game.pieces.Laban;
+import com.tetris.game.pieces.*;
 
 public class PieceFactory {
     public enum PieceKind {
@@ -11,12 +11,12 @@ public class PieceFactory {
         Piece newPiece = null;
         switch (piece){
             case LABAN: newPiece = new Laban();break;
-            case TJUKKAS: newPiece = new Laban();break;
-            case TIPSY: newPiece = new Laban();break;
-            case ELLE: newPiece = new Laban();break;
-            case INELLE: newPiece = new Laban();break;
-            case KNOLL: newPiece = new Laban();break;
-            case TOTT: newPiece = new Laban();break;
+            case TJUKKAS: newPiece = new Tjukkas();break;
+            case TIPSY: newPiece = new Tipsy();break;
+            case ELLE: newPiece = new Elle();break;
+            case INELLE: newPiece = new Inelle();break;
+            case KNOLL: newPiece = new Knoll();break;
+            case TOTT: newPiece = new Tott();break;
         }
         return newPiece;
     }
