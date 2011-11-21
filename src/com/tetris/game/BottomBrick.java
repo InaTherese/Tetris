@@ -11,7 +11,7 @@ public class BottomBrick implements Bottom {
 
     public boolean hasPieceAt(int x, int y) {
         boolean hasPieceAt = false;
-        if (y == TetrisView.BOARD_HEIGHT-1) {
+        if (y == TetrisView.BOARD_HEIGHT) {
             hasPieceAt = true;
         } else {
             for (Square s : bottomGrid) {

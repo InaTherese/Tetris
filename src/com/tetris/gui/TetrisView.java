@@ -5,7 +5,6 @@ import android.content.res.Resources;
 import android.util.AttributeSet;
 import com.tetris.R;
 import com.tetris.game.Square;
-import com.tetris.game.SquareImpl;
 
 import java.util.ArrayList;
 
@@ -35,24 +34,12 @@ public class TetrisView extends TileView {
 
     void redrawScreen(ArrayList<Square> pieceSquares) {
         clearScreen();
-        drawWalls();
         drawSquares(pieceSquares);
     }
 
     void drawSquares(ArrayList<Square> squaresForPiece) {
         for (Square s : squaresForPiece) {
             setSquare(s);
-        }
-    }
-
-    void drawWalls() {
-        for (int x = 0; x < mXTileCount; x++) {
-            setSquare(new SquareImpl(x, 0, Square.GREEN));
-            setSquare(new SquareImpl(x, mYTileCount - 1, Square.GREEN));
-        }
-        for (int y = 1; y < mYTileCount - 1; y++) {
-            setSquare(new SquareImpl(0, y, Square.GREEN));
-            setSquare(new SquareImpl(mXTileCount - 1, y, Square.GREEN));
         }
     }
 

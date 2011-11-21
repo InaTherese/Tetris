@@ -42,7 +42,7 @@ public abstract class Piece {
             y+=1;
     }
     
-    private boolean withinBounds(int x, int y){
+    public boolean withinBounds(int x, int y){
         for (Square s : getSquaresWithGlobalCoordinates()){
             if (squareOutOfBounds(x, y, s))
                 return false;

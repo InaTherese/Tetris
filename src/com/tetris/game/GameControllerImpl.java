@@ -20,19 +20,31 @@ public class GameControllerImpl implements GameController{
     }
 
     public void rotatePiece() {
+        if (unlessRotationWillCollide())
+            currentPiece.rotate();
+    }
+
+    private boolean unlessRotationWillCollide() {
         currentPiece.rotate();
+        boolean willNotCollide = !willCollide(0,0) && currentPiece.withinBounds(0,0);
+        currentPiece.rotate();
+        currentPiece.rotate();
+        currentPiece.rotate();
+        return willNotCollide;
     }
 
     public void movePieceLeft() {
-        currentPiece.moveLeft();
+        if (!willCollide(-1, 0))
+            currentPiece.moveLeft();
     }
 
     public void movePieceRight() {
-        currentPiece.moveRight();
+        if (!willCollide(1, 0))
+            currentPiece.moveRight();
     }
 
     public void movePieceDown() {
-        if (hasHitBottom()) {
+        if (willCollide(0, 1)) {
             bottomBricks.commitPieceToBottom(currentPiece);
             generateNewPiece();
         } else {
@@ -40,11 +52,11 @@ public class GameControllerImpl implements GameController{
         }
     }
 
-    private boolean hasHitBottom() {
-        boolean hasHitBottom;
+    private boolean willCollide(int x, int y) {
+        boolean willHitBottom;
         Square[] squares = currentPiece.getSquaresWithGlobalCoordinates();
         for (Square s : squares){
-            if (bottomBricks.hasPieceAt(s.getX(),s.getY()))
+            if (bottomBricks.hasPieceAt(s.getX()+x,s.getY()+y))
                 return true;
         }
         return false;
