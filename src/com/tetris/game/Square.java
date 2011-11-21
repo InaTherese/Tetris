@@ -13,6 +13,8 @@ public interface Square {
     
     int getX();
     int getY();
+    void setX(int x);
+    void setY(int y);
 
     int getColor();
     void makeCoordinatesGlobal(int xOffset, int yOffset);
