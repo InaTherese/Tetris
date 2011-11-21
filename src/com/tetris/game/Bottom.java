@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public interface Bottom {
     boolean hasPieceAt(int x, int y);
-    int commitPieceToBottom(Piece piece);
+    void commitPieceToBottom(Piece piece);
+    public int getNumberOfRemovedLines();
     ArrayList<Square> getBottomGrid();
 }
