@@ -32,8 +32,9 @@ containing a value of this type.
         public static final int yellow=0x7f020007;
     }
     public static final class id {
+        public static final int score=0x7f060001;
         public static final int snake=0x7f060000;
-        public static final int text=0x7f060001;
+        public static final int text=0x7f060002;
     }
     public static final class layout {
         public static final int main=0x7f030000;

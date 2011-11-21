@@ -22,9 +22,9 @@ public class BottomBrick implements Bottom {
         return hasPieceAt;
     }
 
-    public void commitPieceToBottom(Piece piece) {
+    public int commitPieceToBottom(Piece piece) {
         Collections.addAll(bottomGrid, piece.getSquaresWithGlobalCoordinates());
-        checkRowsForPoints();
+        return checkRowsForPoints();
     }
 
     private void applyGravity(int i) {

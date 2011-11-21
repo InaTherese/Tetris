@@ -1,7 +1,5 @@
 package com.tetris.game;
 
-import com.tetris.game.pieces.*;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -10,7 +8,8 @@ public class GameControllerImpl implements GameController{
     Piece currentPiece;
     Piece nextPiece;
     Bottom bottomBricks;
-    
+    private int score = 0;
+
     public GameControllerImpl(){
         generateNewPiece();
         generateNewPiece();
@@ -48,7 +47,7 @@ public class GameControllerImpl implements GameController{
 
     public void movePieceDown() {
         if (willCollide(0, 1)) {
-            bottomBricks.commitPieceToBottom(currentPiece);
+            score+= bottomBricks.commitPieceToBottom(currentPiece);
             generateNewPiece();
         } else {
             currentPiece.moveDown();
@@ -65,7 +64,7 @@ public class GameControllerImpl implements GameController{
     }
 
     public int getScore() {
-        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+        return score;
     }
 
     public int moveDelay() {
