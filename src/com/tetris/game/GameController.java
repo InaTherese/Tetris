@@ -1,5 +1,7 @@
 package com.tetris.game;
 
+import java.util.ArrayList;
+
 public interface GameController {
     int PAUSE = 0;
     int READY = 1;
@@ -14,5 +16,5 @@ public interface GameController {
     int getScore();
     int moveDelay();
     
-    Square[] getSquaresReadyToDraw();
+    ArrayList<Square> getSquaresReadyToDraw();
 }
