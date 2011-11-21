@@ -37,8 +37,6 @@ public class TetrisController extends TetrisView {
     public void gameLoop() {
         if (isTimeToMovePieceDown()) {
             gameController.movePieceDown();
-            if (scoreBoard!=null)
-                scoreBoard.setText(gameController.getScore()+"");
             timeOfLastMove = System.currentTimeMillis();
         }
         redrawScreen(gameController.getSquaresReadyToDraw());

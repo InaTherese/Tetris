@@ -3,7 +3,6 @@ package com.tetris.gui;
 import android.content.Context;
 import android.content.res.Resources;
 import android.util.AttributeSet;
-import android.widget.TextView;
 import com.tetris.R;
 import com.tetris.game.Square;
 
@@ -14,8 +13,6 @@ import java.util.ArrayList;
  * TetrisView is game-specific and works with Squares.
  */
 public class TetrisView extends TileView {
-    TextView scoreBoard;
-
     public final static int BOARD_HEIGHT = 15;
     public final static int BOARD_WIDTH = 10;
 
@@ -31,7 +28,6 @@ public class TetrisView extends TileView {
 
     private void initTetrisView() {
         setFocusable(true);
-        scoreBoard = (TextView)findViewById(R.id.score);
         loadTiles(this.getContext().getResources());
     }
 
