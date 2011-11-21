@@ -7,7 +7,7 @@ import com.tetris.R;
 
 import java.util.ArrayList;
 
-public class MyActivity extends Activity implements GestureOverlayView.OnGesturePerformedListener {
+public class Tetris extends Activity implements GestureOverlayView.OnGesturePerformedListener {
     private GestureLibrary mLibrary;
     private TetrisController controller;
     private boolean activeGame = false;

@@ -20,7 +20,6 @@ import com.tetris.game.GameControllerImpl;
 public class TetrisController extends TetrisView {
     private GameController gameController;
     RefreshHandler redrawHandler = new RefreshHandler();
-    private TextView scoreBoard;
     private int gameState = GameController.READY;
     private long timeOfLastMove;
 
@@ -55,7 +54,7 @@ public class TetrisController extends TetrisView {
         if (isTimeToMovePieceDown()) {
             gameController.movePieceDown();
             View p = this.getRootView();
-            scoreBoard = (TextView)p.findViewById(R.id.score);
+            TextView scoreBoard = (TextView) p.findViewById(R.id.score);
             scoreBoard.setText("score: " + gameController.getScore());
             timeOfLastMove = System.currentTimeMillis();
         }
