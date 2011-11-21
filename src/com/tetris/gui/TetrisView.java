@@ -7,11 +7,16 @@ import com.tetris.R;
 import com.tetris.game.Square;
 import com.tetris.game.SquareImpl;
 
+import java.util.ArrayList;
+
 /**
  * Handles drawing-related code for Tetris. Where TileView is general and works with graphics,
  * TetrisView is game-specific and works with Squares.
  */
 public class TetrisView extends TileView {
+    
+    public final static int BOARD_HEIGHT = 15;
+    public final static int BOARD_WIDTH = 10;
 
     public TetrisView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -28,13 +33,13 @@ public class TetrisView extends TileView {
         loadTiles(this.getContext().getResources());
     }
 
-    void redrawScreen(Square[] pieceSquares) {
+    void redrawScreen(ArrayList<Square> pieceSquares) {
         clearScreen();
         drawWalls();
-        drawPiece(pieceSquares);
+        drawSquares(pieceSquares);
     }
 
-    void drawPiece(Square[] squaresForPiece) {
+    void drawSquares(ArrayList<Square> squaresForPiece) {
         for (Square s : squaresForPiece) {
             setSquare(s);
         }

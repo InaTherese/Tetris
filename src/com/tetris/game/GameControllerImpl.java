@@ -2,17 +2,20 @@ package com.tetris.game;
 
 import com.tetris.game.pieces.Laban;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class GameControllerImpl implements GameController{
 
     Piece currentPiece;
     Bottom bottomBricks;
     
     public GameControllerImpl(){
-        generateStartingPiece();
+        generateNewPiece();
         bottomBricks = new BottomBrick();
     }
 
-    private void generateStartingPiece() {
+    private void generateNewPiece() {
         currentPiece = new Laban();
     }
 
@@ -29,7 +32,22 @@ public class GameControllerImpl implements GameController{
     }
 
     public void movePieceDown() {
-        currentPiece.moveDown();
+        if (hasHitBottom()) {
+            bottomBricks.commitPieceToBottom(currentPiece);
+            generateNewPiece();
+        } else {
+            currentPiece.moveDown();
+        }
+    }
+
+    private boolean hasHitBottom() {
+        boolean hasHitBottom;
+        Square[] squares = currentPiece.getSquaresWithGlobalCoordinates();
+        for (Square s : squares){
+            if (bottomBricks.hasPieceAt(s.getX(),s.getY()))
+                return true;
+        }
+        return false;
     }
 
     public int getScore() {
@@ -40,7 +58,10 @@ public class GameControllerImpl implements GameController{
         return 1000;
     }
 
-    public Square[] getSquaresReadyToDraw() {
-        return currentPiece.getSquaresWithGlobalCoordinates();
+    public ArrayList<Square> getSquaresReadyToDraw() {
+        ArrayList<Square> squares = new ArrayList<Square>();
+        Collections.addAll(squares, currentPiece.getSquaresWithGlobalCoordinates());
+        squares.addAll(bottomBricks.getBottomGrid());
+        return squares;
     }
 }

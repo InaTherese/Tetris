@@ -1,5 +1,7 @@
 package com.tetris.game;
 
+import com.tetris.gui.TetrisView;
+
 public abstract class Piece {
 
     int x = 0;
@@ -49,6 +51,6 @@ public abstract class Piece {
     }
 
     private boolean squareOutOfBounds(int x, int y, Square s) {
-        return s.getX()+x>=10 || s.getX()+x<0 || s.getY()+y>=20 || s.getY()+y<0;
+        return s.getX()+x>= TetrisView.BOARD_WIDTH || s.getX()+x<0 || s.getY()+y>=TetrisView.BOARD_HEIGHT || s.getY()+y<0;
     }
 }
