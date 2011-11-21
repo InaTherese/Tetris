@@ -4,11 +4,11 @@ import com.tetris.game.Piece;
 import com.tetris.game.Square;
 import com.tetris.game.SquareImpl;
 
-public class Laban extends Piece {
+public class Tjukkas extends Piece {
 
     boolean standing = true;
     
-    public Laban(){
+    public Tjukkas(){
         piece[0] = new SquareImpl(1,0, Square.BLUE);
         piece[1] = new SquareImpl(1,1, Square.BLUE);
         piece[2] = new SquareImpl(1,2, Square.BLUE);
