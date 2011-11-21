@@ -8,15 +8,18 @@ import java.util.Collections;
 public class GameControllerImpl implements GameController{
 
     Piece currentPiece;
+    Piece nextPiece;
     Bottom bottomBricks;
     
     public GameControllerImpl(){
+        generateNewPiece();
         generateNewPiece();
         bottomBricks = new BottomBrick();
     }
 
     private void generateNewPiece() {
-        currentPiece = new Inelle();
+    	currentPiece = nextPiece;
+    	nextPiece = new Inelle();
     }
 
     public void rotatePiece() {
@@ -53,7 +56,6 @@ public class GameControllerImpl implements GameController{
     }
 
     private boolean willCollide(int x, int y) {
-        boolean willHitBottom;
         Square[] squares = currentPiece.getSquaresWithGlobalCoordinates();
         for (Square s : squares){
             if (bottomBricks.hasPieceAt(s.getX()+x,s.getY()+y))
