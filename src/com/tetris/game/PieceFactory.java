@@ -7,17 +7,22 @@ public class PieceFactory {
         LABAN, TJUKKAS, TIPSY, ELLE, INELLE, KNOLL, TOTT
     }
 
-    public static Piece generateDesiredPiece(PieceKind piece){
-        Piece newPiece = null;
-        switch (piece){
-            case LABAN: newPiece = new Laban();break;
-            case TJUKKAS: newPiece = new Tjukkas();break;
-            case TIPSY: newPiece = new Tipsy();break;
-            case ELLE: newPiece = new Elle();break;
-            case INELLE: newPiece = new Inelle();break;
-            case KNOLL: newPiece = new Knoll();break;
-            case TOTT: newPiece = new Tott();break;
+    public static Piece generateDesiredPiece(PieceKind piece) {
+        switch (piece) {
+            case LABAN:
+                return new Laban();
+            case TJUKKAS:
+                return new Tjukkas();
+            case TIPSY:
+                return new Tipsy();
+            case ELLE:
+                return new Elle();
+            case INELLE:
+                return new Inelle();
+            case KNOLL:
+                return new Knoll();
+            default:
+                return new Tott();
         }
-        return newPiece;
     }
 }
