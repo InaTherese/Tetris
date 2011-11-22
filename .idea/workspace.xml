@@ -12,17 +12,7 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="INFO" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26143f5c-530a-40c9-a428-785d1b7525b2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/tetris/R.java" afterPath="$PROJECT_DIR$/gen/com/tetris/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tetris/game/Bottom.java" afterPath="$PROJECT_DIR$/src/com/tetris/game/Bottom.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tetris/game/BottomBrick.java" afterPath="$PROJECT_DIR$/src/com/tetris/game/BottomBrick.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tetris/game/GameController.java" afterPath="$PROJECT_DIR$/src/com/tetris/game/GameController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tetris/game/GameControllerImpl.java" afterPath="$PROJECT_DIR$/src/com/tetris/game/GameControllerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tetris/gui/Tetris.java" afterPath="$PROJECT_DIR$/src/com/tetris/gui/Tetris.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tetris/gui/TetrisController.java" afterPath="$PROJECT_DIR$/src/com/tetris/gui/TetrisController.java" />
-    </list>
+    <list default="true" id="26143f5c-530a-40c9-a428-785d1b7525b2" name="Default" comment="" />
     <ignored path="Tetris.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored mask="*.apk" />
@@ -147,7 +137,7 @@
       <file leaf-file-name="TetrisController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/tetris/gui/TetrisController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="77" selection-start="2222" selection-end="2222" vertical-scroll-proportion="0.69625247">
+            <state line="63" column="13" selection-start="1788" selection-end="1788" vertical-scroll-proportion="0.2623274">
               <folding />
             </state>
           </provider>
@@ -414,7 +404,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="FullScreen" value="false" />
+    <property name="FullScreen" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -650,7 +640,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2413793" sideWeight="0.6711004" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32889965" sideWeight="0.29813218" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889965" sideWeight="0.29813218" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Android Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32889965" sideWeight="0.6961207" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Sequence" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -826,7 +816,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tetris/gui/TetrisController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="77" selection-start="2222" selection-end="2222" vertical-scroll-proportion="0.69625247">
+        <state line="63" column="13" selection-start="1788" selection-end="1788" vertical-scroll-proportion="0.2623274">
           <folding />
         </state>
       </provider>
