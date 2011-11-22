@@ -1,4 +1,4 @@
-package com.tetris.gui;
+package com.tetris.gui.tinyView;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -8,19 +8,20 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
 import com.tetris.game.Square;
+import com.tetris.gui.TetrisView;
 
 /**
  * TileView: a View-variant designed for handling arrays of "icons" or other drawables.
  */
 
-public class TileView extends View {
+public class TinyTileView extends View {
 
     /**
      * Parameters controlling the size of the tiles and their range within view.
      * Width/Height are in pixels, and Drawables will be scaled to fit to these
      * dimensions. X/Y Tile Counts are the number of tiles that will be drawn.
      */
-    protected static int mTileSize = 22;
+    protected static int mTileSize = 14;
 
     protected static int mXTileCount;
     protected static int mYTileCount;
@@ -42,11 +43,11 @@ public class TileView extends View {
 
     private final Paint mPaint = new Paint();
 
-    public TileView(Context context, AttributeSet attrs, int defStyle) {
+    public TinyTileView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
-    public TileView(Context context, AttributeSet attrs) {
+    public TinyTileView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
@@ -113,7 +114,8 @@ public class TileView extends View {
     }
 
     public void setSquare(Square square) {
-        mTileGrid[square.getX()][square.getY()] = square.getColor();
+        if (square.getY()<TetrisView.BOARD_HEIGHT && square.getX()<TetrisView.BOARD_WIDTH)
+            mTileGrid[square.getX()][square.getY()] = square.getColor();
     }
 
     @Override

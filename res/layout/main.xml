@@ -1,44 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/layout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="10sp">
-    <com.tetris.gui.TetrisController
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:padding="10sp">
+
+    <com.tetris.gui.TetrisViewController
             android:id="@+id/tetris"
             android:background="@color/white"
             android:layout_width="220sp"
             android:layout_height="match_parent"
             />
-    <!--    <com.tetris.gui.TetrisView
-        android:id="@+id/next_piece"
-        android:background="#aaaaaa"
-        android:layout_width="70sp"
-        android:layout_height="70sp"
-        android:layout_toRightOf="@id/tetris"
-        android:layout_marginLeft="10sp"
-    />-->
-    <TextView
-            android:id="@+id/score"
-            android:text="0"
-            android:visibility="visible"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="right"
-            android:layout_marginTop="80sp"
-            android:textColor="#ffffff"
-            android:textSize="20sp"/>
-    <TextView
-            android:id="@+id/combo"
-            android:text="x1"
-            android:visibility="visible"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="right"
-            android:layout_marginTop="110sp"
-            android:textColor="#ffffff"
-            android:textSize="20sp"/>
 
-</RelativeLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+        <com.tetris.gui.tinyView.TinyTetrisView
+                android:id="@+id/next_piece"
+                android:layout_marginLeft="10sp"
+                android:background="#ffffff"
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                />
+
+        <TextView
+                android:id="@+id/score"
+                android:text="0"
+                android:visibility="visible"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:gravity="right"
+                android:textSize="20sp"/>
+        <TextView
+                android:id="@+id/combo"
+                android:text="x1"
+                android:visibility="visible"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="#ffffff"
+                android:textSize="20sp"/>
+    </LinearLayout>
+
+</LinearLayout>
 
 

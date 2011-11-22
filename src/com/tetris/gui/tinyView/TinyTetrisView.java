@@ -1,4 +1,4 @@
-package com.tetris.gui;
+package com.tetris.gui.tinyView;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -12,16 +12,16 @@ import java.util.ArrayList;
  * Handles drawing-related code for TetrisGame. Where TileView is general and works with graphics,
  * TetrisView is game-specific and works with Squares.
  */
-public class TetrisView extends TileView {
-    public final static int BOARD_HEIGHT = 21;
-    public final static int BOARD_WIDTH = 10;
+public class TinyTetrisView extends TinyTileView {
+    public final static int BOARD_HEIGHT = 4;
+    public final static int BOARD_WIDTH = 4;
 
-    public TetrisView(Context context, AttributeSet attributeSet) {
+    public TinyTetrisView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         initTetrisView();
     }
 
-    public TetrisView(Context context, AttributeSet attributeSet, int defStyle) {
+    public TinyTetrisView(Context context, AttributeSet attributeSet, int defStyle) {
         super(context, attributeSet, defStyle);
         initTetrisView();
     }
@@ -31,7 +31,7 @@ public class TetrisView extends TileView {
         loadTiles(this.getContext().getResources());
     }
 
-    void redrawScreen(ArrayList<Square> pieceSquares) {
+    public void redrawScreen(ArrayList<Square> pieceSquares) {
         clearScreen();
         drawSquares(pieceSquares);
     }

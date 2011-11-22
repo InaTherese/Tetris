@@ -33,9 +33,9 @@ containing a value of this type.
     }
     public static final class id {
         public static final int combo=0x7f070003;
-        public static final int layout=0x7f070000;
+        public static final int next_piece=0x7f070001;
         public static final int score=0x7f070002;
-        public static final int tetris=0x7f070001;
+        public static final int tetris=0x7f070000;
     }
     public static final class layout {
         public static final int main=0x7f030000;
