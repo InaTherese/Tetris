@@ -25,6 +25,7 @@ public class TetrisController extends TetrisView {
     private long timeOfLastMove;
     private TextView comboBoard;
     private TextView scoreBoard;
+    private TetrisView nextPiecePreview;
 
     public TetrisController(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -70,7 +71,12 @@ public class TetrisController extends TetrisView {
         View p = this.getRootView();
         scoreBoard = (TextView) p.findViewById(R.id.score);
         comboBoard = (TextView) p.findViewById(R.id.combo);
-        scoreBoard.setText("Score: " + gameController.getScore());
+        /*nextPiecePreview = (TetrisView) p.findViewById(R.id.next_piece);
+        nextPiecePreview.clearScreen();
+        for (Square s : gameController.getNextPieceReadyToDraw()){
+            nextPiecePreview.setSquare(s);
+        }*/
+        scoreBoard.setText("" + gameController.getScore());
         comboBoard.setText(gameController.getRemainingTimeOfCombo()/1000 + "s; x" + gameController.getCombos());
     }
 
