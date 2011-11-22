@@ -32,9 +32,9 @@ containing a value of this type.
         public static final int yellow=0x7f020007;
     }
     public static final class id {
-        public static final int gestures=0x7f070000;
-        public static final int score=0x7f070002;
-        public static final int tetris=0x7f070001;
+        public static final int combo=0x7f070002;
+        public static final int score=0x7f070001;
+        public static final int tetris=0x7f070000;
         public static final int text=0x7f070003;
     }
     public static final class layout {

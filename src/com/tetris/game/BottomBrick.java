@@ -9,11 +9,31 @@ public class BottomBrick implements Bottom {
 
     ArrayList<Square> bottomGrid = new ArrayList<Square>();
 
+    private int numberOfRemovedLines = 0;
+    private int numberOfCombos = 1;
+    private long timeOfLastLine = System.currentTimeMillis();
+    private long comboThreshold = 12000;
+
+    public int getNumberOfCombos() {
+        return numberOfCombos;
+    }
+
+    public long getComboThreshold() {
+        return comboThreshold;
+    }
+
+    public long getTimeLeftOfCombo() {
+        long timeSince = System.currentTimeMillis()-timeOfLastLine;
+        return comboThreshold-timeSince;
+    }
+
+    public void setComboThreshold(long comboThreshold) {
+        this.comboThreshold = comboThreshold;
+    }
+
     public int getNumberOfRemovedLines() {
         return numberOfRemovedLines;
     }
-
-    private int numberOfRemovedLines = 0;
 
     public boolean hasPieceAt(int x, int y) {
         boolean hasPieceAt = false;
@@ -59,7 +79,17 @@ public class BottomBrick implements Bottom {
         }
         bottomGrid.removeAll(squares);
         applyGravity(i);
+        giveScore();
+    }
+
+    private void giveScore() {
         numberOfRemovedLines++;
+        if (System.currentTimeMillis()-comboThreshold < timeOfLastLine){
+            numberOfCombos++;
+        } else {
+            numberOfCombos = 1;
+        }
+        timeOfLastLine = System.currentTimeMillis();
     }
 
     private boolean hasFullLineAtRow(int row){

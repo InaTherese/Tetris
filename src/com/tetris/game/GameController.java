@@ -12,9 +12,14 @@ public interface GameController {
     void movePieceLeft();
     void movePieceRight();
     void movePieceDown();
+    void movePieceToBottom();
 
+    boolean willCollide(int x, int y);
     int getScore();
+    int getCombos();
+    long getRemainingTimeOfCombo();
+
     int moveDelay();
-    
+
     ArrayList<Square> getSquaresReadyToDraw();
 }
