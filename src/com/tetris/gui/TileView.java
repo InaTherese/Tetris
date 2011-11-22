@@ -16,11 +16,11 @@ import com.tetris.game.Square;
 public class TileView extends View {
 
     /**
-     * Parameters controlling the size of the tiles and their range within view.
+     * Parameters controlling the size of the tiles and their range within viewController.
      * Width/Height are in pixels, and Drawables will be scaled to fit to these
      * dimensions. X/Y Tile Counts are the number of tiles that will be drawn.
      */
-    protected static int mTileSize = 22;
+    protected static int mTileSize;
 
     protected static int mXTileCount;
     protected static int mYTileCount;
@@ -42,12 +42,14 @@ public class TileView extends View {
 
     private final Paint mPaint = new Paint();
 
-    public TileView(Context context, AttributeSet attrs, int defStyle) {
+    public TileView(Context context, AttributeSet attrs, int defStyle, int tileSize) {
         super(context, attrs, defStyle);
+        mTileSize = tileSize;
     }
 
-    public TileView(Context context, AttributeSet attrs) {
+    public TileView(Context context, AttributeSet attrs, int tileSize) {
         super(context, attrs);
+        mTileSize = tileSize;
     }
 
     /**

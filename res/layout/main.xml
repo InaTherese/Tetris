@@ -3,9 +3,10 @@
               android:orientation="horizontal"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
+              android:id="@+id/layout"
               android:padding="10sp">
 
-    <com.tetris.gui.TetrisViewController
+    <com.tetris.gui.TetrisView
             android:id="@+id/tetris"
             android:background="@color/white"
             android:layout_width="220sp"
@@ -17,10 +18,9 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1">
-        <com.tetris.gui.tinyView.TinyTetrisView
+        <com.tetris.gui.TinyTetrisView
                 android:id="@+id/next_piece"
                 android:layout_marginLeft="10sp"
-                android:background="#ffffff"
                 android:layout_width="70sp"
                 android:layout_height="70sp"
                 />

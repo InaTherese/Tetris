@@ -15,14 +15,15 @@ import java.util.ArrayList;
 public class TetrisView extends TileView {
     public final static int BOARD_HEIGHT = 21;
     public final static int BOARD_WIDTH = 10;
+    public final static int TILE_SIZE = 22;
 
     public TetrisView(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet);
+        super(context, attributeSet, TILE_SIZE);
         initTetrisView();
     }
 
     public TetrisView(Context context, AttributeSet attributeSet, int defStyle) {
-        super(context, attributeSet, defStyle);
+        super(context, attributeSet, defStyle, TILE_SIZE);
         initTetrisView();
     }
 

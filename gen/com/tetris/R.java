@@ -9,14 +9,6 @@ package com.tetris;
 
 public final class R {
     public static final class attr {
-        /** <p>Must be an integer value, such as "<code>100</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int tileSize=0x7f010000;
     }
     public static final class color {
         public static final int white=0x7f050000;
@@ -32,10 +24,11 @@ containing a value of this type.
         public static final int yellow=0x7f020007;
     }
     public static final class id {
-        public static final int combo=0x7f070003;
-        public static final int next_piece=0x7f070001;
-        public static final int score=0x7f070002;
-        public static final int tetris=0x7f070000;
+        public static final int combo=0x7f070004;
+        public static final int layout=0x7f070000;
+        public static final int next_piece=0x7f070002;
+        public static final int score=0x7f070003;
+        public static final int tetris=0x7f070001;
     }
     public static final class layout {
         public static final int main=0x7f030000;
@@ -51,33 +44,4 @@ containing a value of this type.
         public static final int mode_ready=0x7f060001;
         public static final int snake_layout_text_text=0x7f060005;
     }
-    public static final class styleable {
-        /** Attributes that can be used with a TileView.
-           <p>Includes the following attributes:</p>
-           <table>
-           <colgroup align="left" />
-           <colgroup align="left" />
-           <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #TileView_tileSize com.tetris:tileSize}</code></td><td></td></tr>
-           </table>
-           @see #TileView_tileSize
-         */
-        public static final int[] TileView = {
-            0x7f010000
-        };
-        /**
-          <p>This symbol is the offset where the {@link com.tetris.R.attr#tileSize}
-          attribute's value can be found in the {@link #TileView} array.
-
-
-          <p>Must be an integer value, such as "<code>100</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:tileSize
-        */
-        public static final int TileView_tileSize = 0;
-    };
 }
