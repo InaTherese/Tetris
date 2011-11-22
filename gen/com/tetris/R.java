@@ -36,9 +36,11 @@ containing a value of this type.
         public static final int score=0x7f070001;
         public static final int tetris=0x7f070000;
         public static final int text=0x7f070003;
+        public static final int textView1=0x7f070004;
     }
     public static final class layout {
         public static final int main=0x7f030000;
+        public static final int splash=0x7f030001;
     }
     public static final class raw {
         public static final int gestures=0x7f040000;
