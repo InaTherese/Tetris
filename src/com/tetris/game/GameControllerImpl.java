@@ -23,8 +23,8 @@ public class GameControllerImpl implements GameController{
     }
 
     private void increaseDifficulty() {
-        if (moveDelay()>0)
-            moveDelay--;
+        if (moveDelay()>0 && bottomBricks!=null)
+            moveDelay=1000-getScore();
     }
 
     public void rotatePiece() {

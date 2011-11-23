@@ -41,9 +41,8 @@ public class TetrisActivity extends Activity {
                 if (viewController.gameState == GameController.READY | viewController.gameState == GameController.LOSE) {
                     startActivity(new Intent(this, ClientActivity.class));
                 } else {
-                    rotate();
+                    down();
                 }
-                down();
                 break;
             case KeyEvent.KEYCODE_DPAD_LEFT:
                 left();

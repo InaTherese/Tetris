@@ -36,20 +36,16 @@ public class Server extends Thread {
             in = new BufferedReader(
                     new InputStreamReader(s.getInputStream()));
             while (!controller.gameOver()) {
-                if (!controller.isClientUpdated()) {
-                    for (Square square : controller.getSquaresForBoard()) {
-                        out.println(square.toString());
-                        Log.e(TAG, square.toString());
-                    }
-                    for (Square square : controller.getSquaresForPreview()) {
-                        out.println("next:" + square.toString());
-                        Log.e(TAG, square.toString());
-                    }
-                    out.println(controller.getScoreAsString());
-                    Log.e(TAG, controller.getScoreAsString());
-                    out.println(controller.getComboBoardAsString());
+                for (Square square : controller.getSquaresForBoard()) {
+                    out.println(square.toString());
                 }
-                controller.setClientUpdated(true);
+                for (Square square : controller.getSquaresForPreview()) {
+                    out.println("next:" + square.toString());
+                }
+                out.println(controller.getScoreAsString());
+                out.println(controller.getComboBoardAsString());
+
+                out.println("stop");
             }
         } catch (IOException e) {
             e.printStackTrace();

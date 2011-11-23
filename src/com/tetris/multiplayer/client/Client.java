@@ -3,7 +3,6 @@ package com.tetris.multiplayer.client;
 import android.util.Log;
 import com.tetris.game.Square;
 import com.tetris.game.SquareImpl;
-import com.tetris.gui.ClientActivity;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,11 +15,6 @@ public class Client extends Thread {
 	private final static String TAG = "Client";
 	private final static String IP = "10.0.2.2";
 	private final static int PORT = 12345;
-    private static ClientActivity parent;
-
-    public Client(ClientActivity clientActivity) {
-        parent = clientActivity;
-    }
 
     public void run() {
     	Socket s 			= null;
@@ -36,7 +30,8 @@ public class Client extends Thread {
             ArrayList<Square> nextSquares = new ArrayList<Square>();
             String score = "0";
             String combo = "0s; 1x";
-            while(in.ready()) {
+            String res;
+            while((res = in.readLine()) != null) {
                 // Parse
                 // coord x : coord y : color
                 // x:y:c
@@ -44,15 +39,14 @@ public class Client extends Thread {
                 // combo : value
                 // next : coord x : coord y : color
                 // stop
-
-                String res = in.readLine();
             	if(res.equals("stop")) {
-            		parent.drawTetris(squares);
-            		parent.drawNext(nextSquares);
-            		parent.setScore(score);
-            		parent.setComboBoard(combo);
-                    squares.clear();
-                    nextSquares.clear();
+            		GameData.setBoard(squares);
+            		GameData.setNext(nextSquares);
+            		GameData.setScore(score);
+            		GameData.setBonus(combo);
+                    squares = new ArrayList<Square>();
+                    nextSquares = new ArrayList<Square>();
+                    GameData.setDrawn(false);
             	} else {
 	            	String[] spl = res.split(":");
 	            	if(spl[0].equals("score")) {
@@ -75,7 +69,6 @@ public class Client extends Thread {
             	}
             	Log.i(TAG,res);
             }
-            out.println("PING to server from client");
         } catch (IOException e) {
             e.printStackTrace();
         }finally{//close socket!!

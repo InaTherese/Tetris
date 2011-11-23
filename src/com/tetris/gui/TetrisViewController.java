@@ -25,7 +25,6 @@ public class TetrisViewController {
     private TextView scoreBoard;
     private TetrisView tetrisView;
     private TinyTetrisView preview;
-    private boolean clientUpdated = true;
 
     public TetrisViewController(View viewContainer, GameController controller) {
         this.gameController = controller;
@@ -45,7 +44,6 @@ public class TetrisViewController {
             }
         }
         tetrisView.redrawScreen(gameController.getSquaresReadyToDraw());
-        clientUpdated = false;
         redrawHandler.sleep(10);
     }
 
@@ -63,10 +61,6 @@ public class TetrisViewController {
 
     private boolean isTimeToMovePieceDown() {
         return System.currentTimeMillis() - timeOfLastMove > gameController.moveDelay();
-    }
-
-    public void setClientUpdated(boolean clientUpdated) {
-        this.clientUpdated = clientUpdated;
     }
 
     public ArrayList<Square> getSquaresForBoard() {
@@ -102,9 +96,4 @@ public class TetrisViewController {
             sendMessageDelayed(obtainMessage(0), delayMillis);
         }
     }
-
-    public boolean isClientUpdated() {
-            return clientUpdated;
-    }
-
 }
