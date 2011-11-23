@@ -1,5 +1,7 @@
 package com.tetris.game;
 
+import java.io.Serializable;
+
 public interface Square {
     int BLUE = 1;
     int GREEN = 2;

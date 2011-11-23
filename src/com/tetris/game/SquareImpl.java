@@ -1,6 +1,8 @@
 package com.tetris.game;
 
-public class SquareImpl implements Square {
+import java.io.Serializable;
+
+public class SquareImpl implements Square, Serializable {
     private int x;
     private int y;
     private int color;
