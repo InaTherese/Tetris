@@ -38,18 +38,26 @@ public class Client extends Thread {
             	// Parse
             	// coord x : coord y : color
             	// score : value
+            	// combo : value
             	// next : coord x : coord y : color
             	// stop
             	String res = in.readLine();
             	ArrayList<Square> squares = new ArrayList<Square>();
             	ArrayList<Square> nextSquares = new ArrayList<Square>();
-            	String score;
+            	String score = "0";
+            	String combo = "0s; 1x";
             	if(res.equals("stop")) {
             		// draw and flush
+            		parent.drawTetris(squares);
+            		parent.drawNext(squares);
+            		parent.setScore(score);
+            		parent.setComboBoard(combo);
             	} else {
 	            	String[] spl = res.split(":");
 	            	if(spl[0].equals("score")) {
 	            		score = spl[1];
+	            	} else if(spl[0].equals("combo")) {
+	            		combo = spl[1];
 	            	} else if(spl[0].equals("next")) {
 	            		// make nextPiece
 	            		int x = Integer.parseInt(spl[1]);
@@ -61,7 +69,7 @@ public class Client extends Thread {
 	            		int x = Integer.parseInt(spl[0]);
 	            		int y = Integer.parseInt(spl[1]);
 	            		int color = Integer.parseInt(spl[2]);
-	            		nextSquares.add(new SquareImpl(x, y, color));
+	            		squares.add(new SquareImpl(x, y, color));
 	            	}
             	}
             	Log.i(TAG,res);
