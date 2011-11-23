@@ -24,8 +24,27 @@ public class Client extends Thread {
             out = new PrintWriter(s.getOutputStream(), true);
             in = new BufferedReader(new InputStreamReader(s.getInputStream()));
             
-            String res = in.readLine();
-            Log.i(TAG,res);
+            while(in.ready()) {
+            	// Parse
+            	// coord x : coord y : color
+            	// score : value
+            	// next : coord x : coord y : color
+            	// stop
+            	String res = in.readLine();
+            	if(res.equals("stop")) {
+            		// draw and flush
+            	} else {
+	            	String[] spl = res.split(":");
+	            	if(spl[0].equals("score")) {
+	            		// update score
+	            	} else if(spl[0].equals("next")) {
+	            		// make nextPiece
+	            	} else {
+	            		// add square
+	            	}
+            	}
+            	Log.i(TAG,res);
+            }
             out.println("PING to server from client");
         } catch (IOException e) {
             e.printStackTrace();
