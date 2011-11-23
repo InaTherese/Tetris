@@ -9,7 +9,7 @@ import com.tetris.game.Square;
 import java.util.ArrayList;
 
 /**
- * Handles drawing-related code for TetrisGame. Where TileView is general and works with graphics,
+ * Handles drawing-related code for TetrisActivity. Where TileView is general and works with graphics,
  * TetrisView is game-specific and works with Squares.
  */
 public class TetrisView extends TileView {

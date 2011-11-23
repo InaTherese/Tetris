@@ -9,7 +9,7 @@ import com.tetris.R;
 import com.tetris.game.GameController;
 import com.tetris.game.GameControllerImpl;
 
-public class TetrisGame extends Activity {
+public class TetrisActivity extends Activity {
     TetrisViewController viewController;
     View view;
     private GameController gameController;
