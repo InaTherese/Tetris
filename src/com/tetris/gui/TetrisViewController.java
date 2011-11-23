@@ -8,7 +8,7 @@ import com.tetris.R;
 import com.tetris.game.GameController;
 
 /**
- * Handles behaviour-specific code for the TetrisGame interface.
+ * Handles behaviour-specific code for the TetrisActivity interface.
  * Has the main game loop, and handles the redraw-interval.
  * Handles keyboard-input.
  * Defers to TetrisView for the actual drawing.
