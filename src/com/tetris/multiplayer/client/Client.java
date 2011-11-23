@@ -1,6 +1,7 @@
 package com.tetris.multiplayer.client;
 
 import android.util.Log;
+import com.tetris.gui.ClientActivity;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,8 +13,13 @@ public class Client extends Thread {
 	private final static String TAG = "Client";
 	private final static String IP = "10.0.2.2";
 	private final static int PORT = 12345;
-    
-	public void run() {
+    private static ClientActivity parent;
+
+    public Client(ClientActivity clientActivity) {
+        parent = clientActivity;
+    }
+
+    public void run() {
     	Socket s 			= null;
     	PrintWriter out		= null;
     	BufferedReader in 	= null;
