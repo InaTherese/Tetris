@@ -49,10 +49,6 @@ public class SquareImpl implements Square, Serializable {
 
     @Override
     public String toString() {
-        return "SquareImpl{" +
-                "x=" + x +
-                ", y=" + y +
-                ", color=" + color +
-                '}';
+        return x+":"+y+":"+color;
     }
 }

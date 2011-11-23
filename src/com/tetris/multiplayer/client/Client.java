@@ -1,6 +1,8 @@
 package com.tetris.multiplayer.client;
 
 import android.util.Log;
+import com.tetris.game.Square;
+import com.tetris.game.SquareImpl;
 import com.tetris.gui.ClientActivity;
 
 import java.io.BufferedReader;
@@ -9,9 +11,6 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.ArrayList;
-
-import com.tetris.game.Square;
-import com.tetris.game.SquareImpl;
   
 public class Client extends Thread {   
 	private final static String TAG = "Client";
@@ -27,31 +26,33 @@ public class Client extends Thread {
     	Socket s 			= null;
     	PrintWriter out		= null;
     	BufferedReader in 	= null;
-    	
+
         try {
             s = new Socket(IP, PORT);
             Log.v(TAG, "C: Connected to server" + s.toString());
             out = new PrintWriter(s.getOutputStream(), true);
             in = new BufferedReader(new InputStreamReader(s.getInputStream()));
-            
+            ArrayList<Square> squares = new ArrayList<Square>();
+            ArrayList<Square> nextSquares = new ArrayList<Square>();
+            String score = "0";
+            String combo = "0s; 1x";
             while(in.ready()) {
-            	// Parse
-            	// coord x : coord y : color
-            	// score : value
-            	// combo : value
-            	// next : coord x : coord y : color
-            	// stop
-            	String res = in.readLine();
-            	ArrayList<Square> squares = new ArrayList<Square>();
-            	ArrayList<Square> nextSquares = new ArrayList<Square>();
-            	String score = "0";
-            	String combo = "0s; 1x";
+                // Parse
+                // coord x : coord y : color
+                // x:y:c
+                // score : value
+                // combo : value
+                // next : coord x : coord y : color
+                // stop
+
+                String res = in.readLine();
             	if(res.equals("stop")) {
-            		// draw and flush
             		parent.drawTetris(squares);
-            		parent.drawNext(squares);
+            		parent.drawNext(nextSquares);
             		parent.setScore(score);
             		parent.setComboBoard(combo);
+                    squares.clear();
+                    nextSquares.clear();
             	} else {
 	            	String[] spl = res.split(":");
 	            	if(spl[0].equals("score")) {
@@ -83,6 +84,7 @@ public class Client extends Thread {
 	        	in.close();
 	        	s.close();
         	}catch(IOException e){}
+            catch (NullPointerException n){}
         }
     }
 }

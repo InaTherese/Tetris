@@ -1,6 +1,7 @@
 package com.tetris.gui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -8,6 +9,7 @@ import android.view.View;
 import com.tetris.R;
 import com.tetris.game.GameController;
 import com.tetris.game.GameControllerImpl;
+import com.tetris.multiplayer.server.Server;
 
 public class TetrisActivity extends Activity {
     TetrisViewController viewController;
@@ -21,6 +23,7 @@ public class TetrisActivity extends Activity {
         view = findViewById(R.id.layout);
         gameController = new GameControllerImpl();
         viewController = new TetrisViewController(view, gameController);
+        new Server(viewController).start();//start server
     }
 
     @Override
@@ -35,6 +38,11 @@ public class TetrisActivity extends Activity {
                 }
                 break;
             case KeyEvent.KEYCODE_DPAD_DOWN:
+                if (viewController.gameState == GameController.READY | viewController.gameState == GameController.LOSE) {
+                    startActivity(new Intent(this, ClientActivity.class));
+                } else {
+                    rotate();
+                }
                 down();
                 break;
             case KeyEvent.KEYCODE_DPAD_LEFT:
@@ -74,6 +82,7 @@ public class TetrisActivity extends Activity {
         viewController.setMode(GameController.RUNNING);
         viewController.gameLoop();
     }
+
     public void rotate() {
         gameController.rotatePiece();
     }

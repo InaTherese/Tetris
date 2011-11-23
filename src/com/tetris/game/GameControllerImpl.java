@@ -1,7 +1,5 @@
 package com.tetris.game;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -64,13 +62,13 @@ public class GameControllerImpl implements GameController{
             bottomBricks.commitPieceToBottom(currentPiece);
             generateNewPiece();
             if (willCollide(0, 0)) {
-            	return -1;
+            	return GameController.LOSE;
             }
-            return 1;
+            return GameController.RUNNING;
         } else {
             currentPiece.moveDown();
         }
-        return 0;
+        return GameController.RUNNING;
     }
 
     public boolean willCollide(int x, int y) {

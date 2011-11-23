@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.TextView;
 import com.tetris.R;
 import com.tetris.game.GameController;
+import com.tetris.game.Square;
+
+import java.util.ArrayList;
 
 /**
  * Handles behaviour-specific code for the TetrisActivity interface.
@@ -22,6 +25,7 @@ public class TetrisViewController {
     private TextView scoreBoard;
     private TetrisView tetrisView;
     private TinyTetrisView preview;
+    private boolean clientUpdated = true;
 
     public TetrisViewController(View viewContainer, GameController controller) {
         this.gameController = controller;
@@ -32,16 +36,16 @@ public class TetrisViewController {
     }
 
     public void gameLoop() {
-    	int status;
         if (isTimeToMovePieceDown()) {
-            status = gameController.movePieceDown();
+            gameState = gameController.movePieceDown();
             updateScoreBoard();
             timeOfLastMove = System.currentTimeMillis();
-            if (status == -1) {
+            if (gameState == GameController.LOSE) {
             	return;
             }
         }
         tetrisView.redrawScreen(gameController.getSquaresReadyToDraw());
+        clientUpdated = false;
         redrawHandler.sleep(10);
     }
 
@@ -51,12 +55,38 @@ public class TetrisViewController {
         comboBoard.setText(gameController.getRemainingTimeOfCombo() / 1000 + "s; x" + gameController.getCombos());
     }
 
+
+
     public void setMode(int newMode) {
         gameState = newMode;
     }
 
     private boolean isTimeToMovePieceDown() {
         return System.currentTimeMillis() - timeOfLastMove > gameController.moveDelay();
+    }
+
+    public void setClientUpdated(boolean clientUpdated) {
+        this.clientUpdated = clientUpdated;
+    }
+
+    public ArrayList<Square> getSquaresForBoard() {
+        return gameController.getSquaresReadyToDraw();
+    }
+
+    public ArrayList<Square> getSquaresForPreview() {
+        return gameController.getNextPieceReadyToDraw();
+    }
+
+    public String getScoreAsString() {
+        return "score:"+gameController.getScore();
+    }
+
+    public String getComboBoardAsString() {
+        return "combo:" + gameController.getRemainingTimeOfCombo() + "s; " + gameController.getCombos() + "x";
+    }
+
+    public boolean gameOver() {
+        return gameState == GameController.LOSE;
     }
 
     class RefreshHandler extends Handler {
@@ -72,4 +102,9 @@ public class TetrisViewController {
             sendMessageDelayed(obtainMessage(0), delayMillis);
         }
     }
+
+    public boolean isClientUpdated() {
+            return clientUpdated;
+    }
+
 }
