@@ -7,6 +7,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.ArrayList;
+
+import com.tetris.game.Square;
+import com.tetris.game.SquareImpl;
   
 public class Client extends Thread {   
 	private final static String TAG = "Client";
@@ -31,16 +35,27 @@ public class Client extends Thread {
             	// next : coord x : coord y : color
             	// stop
             	String res = in.readLine();
+            	ArrayList<Square> squares = new ArrayList<Square>();
+            	ArrayList<Square> nextSquares = new ArrayList<Square>();
+            	String score;
             	if(res.equals("stop")) {
             		// draw and flush
             	} else {
 	            	String[] spl = res.split(":");
 	            	if(spl[0].equals("score")) {
-	            		// update score
+	            		score = spl[1];
 	            	} else if(spl[0].equals("next")) {
 	            		// make nextPiece
+	            		int x = Integer.parseInt(spl[1]);
+	            		int y = Integer.parseInt(spl[2]);
+	            		int color = Integer.parseInt(spl[3]);
+	            		nextSquares.add(new SquareImpl(x, y, color));
 	            	} else {
 	            		// add square
+	            		int x = Integer.parseInt(spl[0]);
+	            		int y = Integer.parseInt(spl[1]);
+	            		int color = Integer.parseInt(spl[2]);
+	            		nextSquares.add(new SquareImpl(x, y, color));
 	            	}
             	}
             	Log.i(TAG,res);
