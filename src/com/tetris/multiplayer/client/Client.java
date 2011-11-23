@@ -32,21 +32,14 @@ public class Client extends Thread {
             String combo = "0s; 1x";
             String res;
             while((res = in.readLine()) != null) {
-                // Parse
-                // coord x : coord y : color
-                // x:y:c
-                // score : value
-                // combo : value
-                // next : coord x : coord y : color
-                // stop
             	if(res.equals("stop")) {
-            		GameData.setBoard(squares);
-            		GameData.setNext(nextSquares);
-            		GameData.setScore(score);
-            		GameData.setBonus(combo);
+            		StreamProxyStore.setBoard(squares);
+            		StreamProxyStore.setNext(nextSquares);
+            		StreamProxyStore.setScore(score);
+            		StreamProxyStore.setBonus(combo);
                     squares = new ArrayList<Square>();
                     nextSquares = new ArrayList<Square>();
-                    GameData.setDrawn(false);
+                    StreamProxyStore.setDrawn(false);
             	} else {
 	            	String[] spl = res.split(":");
 	            	if(spl[0].equals("score")) {
@@ -67,7 +60,6 @@ public class Client extends Thread {
 	            		squares.add(new SquareImpl(x, y, color));
 	            	}
             	}
-            	Log.i(TAG,res);
             }
         } catch (IOException e) {
             e.printStackTrace();

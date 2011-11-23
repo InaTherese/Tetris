@@ -5,7 +5,7 @@ import com.tetris.game.Square;
 
 import java.util.ArrayList;
 
-public class GameData {
+public class StreamProxyStore {
     static ArrayList<Square> board = new ArrayList<Square>();
     static ArrayList<Square> next = new ArrayList<Square>();
     static String score = "0";
@@ -21,7 +21,7 @@ public class GameData {
     }
 
     public static void setBoard(ArrayList<Square> board) {
-        GameData.board = board;
+        StreamProxyStore.board = board;
     }
 
     public static ArrayList<Square> getNext() {
@@ -29,7 +29,7 @@ public class GameData {
     }
 
     public static void setNext(ArrayList<Square> next) {
-        GameData.next = next;
+        StreamProxyStore.next = next;
     }
 
     public static String getScore() {
@@ -38,7 +38,7 @@ public class GameData {
     }
 
     public static void setScore(String score) {
-        GameData.score = score;
+        StreamProxyStore.score = score;
         Log.e("SetScore: ", score);
     }
 
@@ -47,7 +47,7 @@ public class GameData {
     }
 
     public static void setBonus(String bonus) {
-        GameData.bonus = bonus;
+        StreamProxyStore.bonus = bonus;
     }
 
     public static void setDrawn(boolean newDrawn) {
