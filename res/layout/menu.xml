@@ -16,10 +16,4 @@
         android:layout_height="wrap_content"
         android:text="Se Tetris" />
 
-    <Button
-        android:id="@+id/button03"
-        android:layout_width="266dp"
-        android:layout_height="wrap_content"
-        android:text="Scores" />
-
 </LinearLayout>
