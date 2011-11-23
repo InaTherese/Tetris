@@ -59,13 +59,18 @@ public class GameControllerImpl implements GameController{
         }
     }
 
-    public void movePieceDown() {
+    public int movePieceDown() {
         if (willCollide(0, 1)) {
             bottomBricks.commitPieceToBottom(currentPiece);
             generateNewPiece();
+            if (willCollide(0, 0)) {
+            	return -1;
+            }
+            return 1;
         } else {
             currentPiece.moveDown();
         }
+        return 0;
     }
 
     public boolean willCollide(int x, int y) {

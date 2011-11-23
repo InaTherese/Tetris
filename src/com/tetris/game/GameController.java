@@ -11,7 +11,7 @@ public interface GameController {
     void rotatePiece();
     void movePieceLeft();
     void movePieceRight();
-    void movePieceDown();
+    int movePieceDown();
     void movePieceToBottom();
 
     boolean willCollide(int x, int y);

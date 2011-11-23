@@ -32,10 +32,14 @@ public class TetrisViewController {
     }
 
     public void gameLoop() {
+    	int status;
         if (isTimeToMovePieceDown()) {
-            gameController.movePieceDown();
+            status = gameController.movePieceDown();
             updateScoreBoard();
             timeOfLastMove = System.currentTimeMillis();
+            if (status == -1) {
+            	return;
+            }
         }
         tetrisView.redrawScreen(gameController.getSquaresReadyToDraw());
         redrawHandler.sleep(10);
