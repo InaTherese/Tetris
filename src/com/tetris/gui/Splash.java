@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import com.tetris.R;
 
-public class Splash extends Tetris {
+public class Splash extends TetrisActivity {
 
 	private final int SPLASH_DISPLAY_LENGHT = 5000;
 

@@ -1,6 +1,8 @@
 package com.tetris.game;
 
-public class SquareImpl implements Square {
+import java.io.Serializable;
+
+public class SquareImpl implements Square, Serializable {
     private int x;
     private int y;
     private int color;
@@ -47,10 +49,6 @@ public class SquareImpl implements Square {
 
     @Override
     public String toString() {
-        return "SquareImpl{" +
-                "x=" + x +
-                ", y=" + y +
-                ", color=" + color +
-                '}';
+        return x+":"+y+":"+color;
     }
 }

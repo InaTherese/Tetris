@@ -3,29 +3,31 @@ package com.tetris.game;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class GameControllerImpl implements GameController{
+public class GameControllerImpl implements GameController {
 
     Piece currentPiece;
     Piece nextPiece;
     Bottom bottomBricks;
+    Score score;
     private int moveDelay = 1000;
 
-    public GameControllerImpl(){
-        generateNewPiece();
-        generateNewPiece();
+    public GameControllerImpl() {
+        score = new ScoreImpl();
         bottomBricks = new BottomBrick();
+        generateNewPiece();
+        generateNewPiece();
     }
 
     private void generateNewPiece() {
-    	currentPiece = nextPiece;
-        increaseDifficulty();
-    	nextPiece = PieceFactory.generateRandomPiece();
+        currentPiece = nextPiece;
+        nextPiece = PieceFactory.generateRandomPiece();
     }
 
     private void increaseDifficulty() {
-        if (moveDelay()>0)
-            moveDelay--;
+        if (1000-score.getScore() > 0)
+            moveDelay=1000-score.getScore();
     }
+
 
     public void rotatePiece() {
         if (unlessRotationWillCollide())
@@ -34,7 +36,7 @@ public class GameControllerImpl implements GameController{
 
     private boolean unlessRotationWillCollide() {
         currentPiece.rotate();
-        boolean willNotCollide = !willCollide(0,0) && currentPiece.withinBounds(0,0);
+        boolean willNotCollide = !willCollide(0, 0) && currentPiece.withinBounds(0, 0);
         currentPiece.rotate();
         currentPiece.rotate();
         currentPiece.rotate();
@@ -52,43 +54,33 @@ public class GameControllerImpl implements GameController{
     }
 
     public void movePieceToBottom() {
-        while (!willCollide(0, 1)){
+        while (!willCollide(0, 1)) {
             movePieceDown();
         }
     }
 
-    public void movePieceDown() {
+    public int movePieceDown() {
         if (willCollide(0, 1)) {
-            bottomBricks.commitPieceToBottom(currentPiece);
+            score.addPoints(bottomBricks.commitPieceToBottom(currentPiece));
+            increaseDifficulty();
             generateNewPiece();
+            if (willCollide(0, 0)) {
+                return GameController.LOSE;
+            }
+            return GameController.RUNNING;
         } else {
             currentPiece.moveDown();
         }
+        return GameController.RUNNING;
     }
 
     public boolean willCollide(int x, int y) {
         Square[] squares = currentPiece.getSquaresWithGlobalCoordinates();
-        for (Square s : squares){
-            if (bottomBricks.hasPieceAt(s.getX()+x,s.getY()+y))
+        for (Square s : squares) {
+            if (bottomBricks.hasPieceAt(s.getX() + x, s.getY() + y))
                 return true;
         }
         return false;
-    }
-
-    public int getScore() {
-        int scoreMultiplier = (1000/moveDelay())*bottomBricks.getNumberOfCombos();
-        return bottomBricks.getNumberOfRemovedLines()*scoreMultiplier;
-    }
-    
-    public int getCombos(){
-        return bottomBricks.getNumberOfCombos();
-    }
-
-    public long getRemainingTimeOfCombo() {
-        long remaining = 0L;
-        if (bottomBricks.getTimeLeftOfCombo()>0)
-            remaining = bottomBricks.getTimeLeftOfCombo();
-        return remaining;
     }
 
     public int moveDelay() {
@@ -106,5 +98,17 @@ public class GameControllerImpl implements GameController{
         ArrayList<Square> squares = new ArrayList<Square>();
         Collections.addAll(squares, nextPiece.getSquaresWithGlobalCoordinates());
         return squares;
+    }
+
+    public int getMultiplier() {
+        return score.getMultiplier();
+    }
+
+    public int getRemainingTimeOfCombo() {
+        return (int) (score.getRemainingTimeOfCombo()/1000);
+    }
+
+    public int getScore(){
+        return score.getScore();
     }
 }

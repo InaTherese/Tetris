@@ -9,20 +9,21 @@ import com.tetris.game.Square;
 import java.util.ArrayList;
 
 /**
- * Handles drawing-related code for Tetris. Where TileView is general and works with graphics,
+ * Handles drawing-related code for TetrisActivity. Where TileView is general and works with graphics,
  * TetrisView is game-specific and works with Squares.
  */
 public class TetrisView extends TileView {
     public final static int BOARD_HEIGHT = 21;
     public final static int BOARD_WIDTH = 10;
+    public final static int TILE_SIZE = 22;
 
     public TetrisView(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet);
+        super(context, attributeSet, TILE_SIZE);
         initTetrisView();
     }
 
     public TetrisView(Context context, AttributeSet attributeSet, int defStyle) {
-        super(context, attributeSet, defStyle);
+        super(context, attributeSet, defStyle, TILE_SIZE);
         initTetrisView();
     }
 

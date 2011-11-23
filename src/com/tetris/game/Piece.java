@@ -4,7 +4,7 @@ import com.tetris.gui.TetrisView;
 
 public abstract class Piece {
 
-    int x = 0;
+    int x = 4;
     int y = 0;
 
     protected Square[] piece = new Square[4];

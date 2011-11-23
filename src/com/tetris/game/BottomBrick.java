@@ -9,32 +9,6 @@ public class BottomBrick implements Bottom {
 
     ArrayList<Square> bottomGrid = new ArrayList<Square>();
 
-    private int numberOfRemovedLines = 0;
-    private int numberOfCombos = 1;
-    private long timeOfLastLine = System.currentTimeMillis();
-    private long comboThreshold = 12000;
-
-    public int getNumberOfCombos() {
-        return numberOfCombos;
-    }
-
-    public long getComboThreshold() {
-        return comboThreshold;
-    }
-
-    public long getTimeLeftOfCombo() {
-        long timeSince = System.currentTimeMillis()-timeOfLastLine;
-        return comboThreshold-timeSince;
-    }
-
-    public void setComboThreshold(long comboThreshold) {
-        this.comboThreshold = comboThreshold;
-    }
-
-    public int getNumberOfRemovedLines() {
-        return numberOfRemovedLines;
-    }
-
     public boolean hasPieceAt(int x, int y) {
         boolean hasPieceAt = false;
         if (y == TetrisView.BOARD_HEIGHT) {
@@ -48,9 +22,9 @@ public class BottomBrick implements Bottom {
         return hasPieceAt;
     }
 
-    public void commitPieceToBottom(Piece piece) {
+    public int commitPieceToBottom(Piece piece) {
         Collections.addAll(bottomGrid, piece.getSquaresWithGlobalCoordinates());
-        checkRowsForPoints();
+        return checkRowsForPoints();
     }
 
     private void applyGravity(int i) {
@@ -64,11 +38,15 @@ public class BottomBrick implements Bottom {
         return bottomGrid;
     }
     
-    private void checkRowsForPoints(){
+    private int checkRowsForPoints(){
+        int fullRows = 0;
         for (int i=0;i<TetrisView.BOARD_HEIGHT;i++){
-            if (hasFullLineAtRow(i))
+            if (hasFullLineAtRow(i)){
                 removeLine(i);
+                fullRows++;
+            }
         }
+        return fullRows;
     }
 
     private void removeLine(int i) {
@@ -79,17 +57,6 @@ public class BottomBrick implements Bottom {
         }
         bottomGrid.removeAll(squares);
         applyGravity(i);
-        giveScore();
-    }
-
-    private void giveScore() {
-        numberOfRemovedLines++;
-        if (System.currentTimeMillis()-comboThreshold < timeOfLastLine){
-            numberOfCombos++;
-        } else {
-            numberOfCombos = 1;
-        }
-        timeOfLastLine = System.currentTimeMillis();
     }
 
     private boolean hasFullLineAtRow(int row){
