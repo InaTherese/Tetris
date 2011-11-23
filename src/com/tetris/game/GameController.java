@@ -9,18 +9,25 @@ public interface GameController {
     int LOSE = 3;
 
     void rotatePiece();
+
     void movePieceLeft();
+
     void movePieceRight();
+
     int movePieceDown();
+
     void movePieceToBottom();
 
     boolean willCollide(int x, int y);
-    int getScore();
-    int getCombos();
-    long getRemainingTimeOfCombo();
 
     int moveDelay();
 
     ArrayList<Square> getSquaresReadyToDraw();
+
     ArrayList<Square> getNextPieceReadyToDraw();
+    
+    int getScore();
+    int getMultiplier();
+
+    int getRemainingTimeOfCombo();
 }

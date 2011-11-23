@@ -50,10 +50,8 @@ public class TetrisViewController {
     void updateScoreBoard() {
         preview.redrawScreen(gameController.getNextPieceReadyToDraw());
         scoreBoard.setText("" + gameController.getScore());
-        comboBoard.setText(gameController.getRemainingTimeOfCombo() / 1000 + "s; x" + gameController.getCombos());
+        comboBoard.setText(gameController.getRemainingTimeOfCombo() + "s; x" + gameController.getMultiplier());
     }
-
-
 
     public void setMode(int newMode) {
         gameState = newMode;
@@ -76,7 +74,7 @@ public class TetrisViewController {
     }
 
     public String getComboBoardAsString() {
-        return "combo:" + gameController.getRemainingTimeOfCombo() + "s; " + gameController.getCombos() + "x";
+        return "combo:" + gameController.getRemainingTimeOfCombo() + "s; " + gameController.getMultiplier() + "x";
     }
 
     public boolean gameOver() {
