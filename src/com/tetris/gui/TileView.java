@@ -20,7 +20,7 @@ public class TileView extends View {
      * Width/Height are in pixels, and Drawables will be scaled to fit to these
      * dimensions. X/Y Tile Counts are the number of tiles that will be drawn.
      */
-    protected static int mTileSize;
+    protected static int mTileSize = 22;
 
     protected static int mXTileCount;
     protected static int mYTileCount;
@@ -44,12 +44,10 @@ public class TileView extends View {
 
     public TileView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        mTileSize = 32;
     }
 
     public TileView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mTileSize = 32;
     }
 
     /**

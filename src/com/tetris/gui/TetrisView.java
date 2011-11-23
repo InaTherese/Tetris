@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * TetrisView is game-specific and works with Squares.
  */
 public class TetrisView extends TileView {
-    public final static int BOARD_HEIGHT = 15;
+    public final static int BOARD_HEIGHT = 21;
     public final static int BOARD_WIDTH = 10;
 
     public TetrisView(Context context, AttributeSet attributeSet) {

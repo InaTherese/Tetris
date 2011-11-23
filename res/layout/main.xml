@@ -1,55 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:background="@color/white">
-
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10sp">
     <com.tetris.gui.TetrisController
             android:id="@+id/tetris"
-            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_width="220sp"
             android:layout_height="match_parent"
-            tileSize="24"
             />
-
+    <!--    <com.tetris.gui.TetrisView
+        android:id="@+id/next_piece"
+        android:background="#aaaaaa"
+        android:layout_width="70sp"
+        android:layout_height="70sp"
+        android:layout_toRightOf="@id/tetris"
+        android:layout_marginLeft="10sp"
+    />-->
     <TextView
             android:id="@+id/score"
-            android:text="Score: 0"
+            android:text="0"
             android:visibility="visible"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:gravity="right"
-            android:padding="10px"
-            android:textColor="#C84663"
-            android:textSize="24sp"/>
+            android:layout_marginTop="80sp"
+            android:textColor="#ffffff"
+            android:textSize="20sp"/>
     <TextView
             android:id="@+id/combo"
             android:text="x1"
             android:visibility="visible"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:gravity="right"
-            android:paddingRight="10px"
-            android:paddingTop="30px"
-            android:textColor="#C84663"
-            android:textSize="24sp"/>
+            android:layout_marginTop="110sp"
+            android:textColor="#ffffff"
+            android:textSize="20sp"/>
 
-    <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        <TextView
-                android:id="@+id/text"
-                android:text="@string/snake_layout_text_text"
-                android:visibility="visible"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:gravity="center_horizontal"
-                android:textColor="#ff8888ff"
-                android:textSize="24sp"/>
-    </RelativeLayout>
-</FrameLayout>
+</RelativeLayout>
 
 

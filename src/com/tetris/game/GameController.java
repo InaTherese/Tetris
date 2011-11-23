@@ -22,4 +22,5 @@ public interface GameController {
     int moveDelay();
 
     ArrayList<Square> getSquaresReadyToDraw();
+    ArrayList<Square> getNextPieceReadyToDraw();
 }

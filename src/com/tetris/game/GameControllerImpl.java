@@ -101,4 +101,10 @@ public class GameControllerImpl implements GameController{
         squares.addAll(bottomBricks.getBottomGrid());
         return squares;
     }
+
+    public ArrayList<Square> getNextPieceReadyToDraw() {
+        ArrayList<Square> squares = new ArrayList<Square>();
+        Collections.addAll(squares, nextPiece.getSquaresWithGlobalCoordinates());
+        return squares;
+    }
 }
