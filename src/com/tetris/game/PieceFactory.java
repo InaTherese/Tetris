@@ -1,8 +1,8 @@
 package com.tetris.game;
 
-import java.util.Random;
-
 import com.tetris.game.pieces.*;
+
+import java.util.Random;
 
 public class PieceFactory {
 	public static final int LABAN = 0;
@@ -34,7 +34,10 @@ public class PieceFactory {
     
     public static Piece generateRandomPiece() {
     	Random r = new Random();
-    	int randomNumber = r.nextInt(7);
-    	return generateDesiredPiece(randomNumber);
+        Piece p = generateDesiredPiece(r.nextInt(7));
+        for (int i=0;i<r.nextInt(2);i++){
+            p.rotate();
+        }
+        return p;
     }
 }

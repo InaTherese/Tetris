@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.tetris.R;
 import com.tetris.game.Square;
 import com.tetris.multiplayer.client.Client;
-import com.tetris.multiplayer.client.GameData;
+import com.tetris.multiplayer.client.ServerGameProxy;
 
 import java.util.ArrayList;
 
@@ -47,13 +47,13 @@ public class ClientActivity extends Activity {
         preview.redrawScreen(pieceSquares);
     }
     public void gameLoop() {
-            if (!GameData.isDrawn()) {
-                setScore(GameData.getScore());
-                setComboBoard(GameData.getBonus());
-                drawTetris(GameData.getBoard());
-                drawNext(GameData.getNext());
+            if (!ServerGameProxy.isDrawn()) {
+                setScore(ServerGameProxy.getScore());
+                setComboBoard(ServerGameProxy.getBonus());
+                drawTetris(ServerGameProxy.getBoard());
+                drawNext(ServerGameProxy.getNext());
             }
-            GameData.setDrawn(true);
+            ServerGameProxy.setDrawn(true);
             redrawHandler.sleep(10);
         }
 

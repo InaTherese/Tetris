@@ -40,13 +40,13 @@ public class Client extends Thread {
                 // next : coord x : coord y : color
                 // stop
             	if(res.equals("stop")) {
-            		GameData.setBoard(squares);
-            		GameData.setNext(nextSquares);
-            		GameData.setScore(score);
-            		GameData.setBonus(combo);
+            		ServerGameProxy.setBoard(squares);
+            		ServerGameProxy.setNext(nextSquares);
+            		ServerGameProxy.setScore(score);
+            		ServerGameProxy.setBonus(combo);
                     squares = new ArrayList<Square>();
                     nextSquares = new ArrayList<Square>();
-                    GameData.setDrawn(false);
+                    ServerGameProxy.setDrawn(false);
             	} else {
 	            	String[] spl = res.split(":");
 	            	if(spl[0].equals("score")) {
