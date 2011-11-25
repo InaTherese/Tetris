@@ -24,6 +24,8 @@ public final class R {
         public static final int yellow=0x7f020007;
     }
     public static final class id {
+        public static final int Button01=0x7f070005;
+        public static final int Button02=0x7f070006;
         public static final int combo=0x7f070004;
         public static final int layout=0x7f070000;
         public static final int next_piece=0x7f070002;
@@ -32,6 +34,7 @@ public final class R {
     }
     public static final class layout {
         public static final int main=0x7f030000;
+        public static final int menu=0x7f030001;
     }
     public static final class raw {
         public static final int gestures=0x7f040000;
